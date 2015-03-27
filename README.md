@@ -2,17 +2,17 @@
 
 Runs on io.js.
 
-Install This - [http://nvm.sh](Node Version Manager)
+NVM makes io.js easier - [Node Version Manager](https://github.com/creationix/nvm) - ctrl+f iojs
 
 ```bash
-$ nvm install iojs
-
-# from wherever you clone it...
-
+# SETUP
+$ git clone https://github.com/metagen/metadev && cd metadev
 $ npm install
+
+# SERVE
 ./bin/serve.js
 
-# restart node on file changed
+# DEVELOP
 npm install -g nodemon
 nodemon ./bin/serve.js
 ```
