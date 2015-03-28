@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+var deploy = require('../deploy/deploy.js');
+deploy('../deploy/deploy.sh', 'hook');
+
 // provides cli
 var program = require('commander');
 program.option('-H, --host <host>', 'specify the host [0.0.0.0]', '0.0.0.0').option(
@@ -12,4 +15,4 @@ program.option('-H, --host <host>', 'specify the host [0.0.0.0]', '0.0.0.0').opt
 var app = require('../lib/client.js');
 
 app.listen(program.port);
-console.log(`Listening on port ${program.port}`)
+console.log('Listening on port %s', program.port)
