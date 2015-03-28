@@ -2,7 +2,6 @@
 
 Runs on io.js.
 
-NVM makes io.js easier - [Node Version Manager](https://github.com/creationix/nvm) - ctrl+f iojs
 
 ```bash
 # SETUP
