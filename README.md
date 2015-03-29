@@ -8,7 +8,7 @@ Runs on io.js.
 $ git clone https://github.com/metagen/metadev && cd metadev
 $ npm install
 
-# SERVE
+# SERVE IN TERMINAL
 ./bin/serve.js
 
 # DEVELOP
