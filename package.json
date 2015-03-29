@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.7.1",
-    "githubhook": "^1.1.3",
+    "gith": "^1.0.4",
     "koa": "^0.18.1",
     "koa-ejs": "^1.1.3",
     "koa-logger": "^1.2.2",

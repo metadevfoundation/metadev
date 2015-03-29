@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-var deploy = require('../deploy/deploy.js');
-deploy('../deploy/deploy.sh', 'hook');
+require('../deploy/deploy.js')({
+	repository: 'metagen/metadev',
+	port: 9001
+});
 
 // provides cli
 var program = require('commander');

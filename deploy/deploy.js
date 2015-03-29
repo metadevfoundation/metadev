@@ -1,20 +1,23 @@
-#!/usr/bin/env node
+var gith = require('gith')
+var execFile = require('child_process').execFile;
 
-var githubhook = require('githubhook');
-var exec = require('child_process').exec;
-
-module.exports = function (secret, command) {
-	var github = githubhook({
-		secret: secret
-	});
-
-	github.listen();
-	console.log('GitHub Deploy Listening');
-
-	github.on('push', function (repo, ref, data) {
-		console.log('WebHook: GitHub Push');
-		var child = exec(command, function (error, stdout, stderr) {
-			console.log(stdout);
-		});
+module.exports = function (options) {
+	
+	var hooks = gith.create(options.port || 9001);
+	console.log('listening to github on %s', options.port || 9001);
+	hooks({
+		repo: options.repository
+	}).on('all', function (payload) {
+		console.log('gith event hook');
+	}).on('file:all', function (payload) {
+		console.log('github push hook activated on branch %s.', payload.branch);
+		if (payload.branch === 'master') {
+			console.log('running hook.sh');
+			execFile('hook.sh', function (error, stdout, stderr) {
+				// Log success in some manner
+				console.log('exec complete');
+			});
+		}
 	});
 }
+
