@@ -15,7 +15,7 @@ module.exports = function (options) {
 			console.log('running hook.sh');
 			execFile('hook.sh', function (error, stdout, stderr) {
 				// Log success in some manner
-				console.log('exec complete');
+				console.log(stdout);
 			});
 		}
 	});

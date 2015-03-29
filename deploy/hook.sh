@@ -4,4 +4,4 @@ echo "Push Hook Script Initiated"
 
 git pull
 
-forever restart ~/metadev/bin/serve.js
+foreverio restart ~/metadev/bin/serve.js
