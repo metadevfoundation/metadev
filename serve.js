@@ -2,10 +2,10 @@
 
 var winston = require('winston');
 var program = require('commander');
+
+var app = require('./lib/client.js');
 var deploy = require('./deploy/deploy.js');
 
-// Load App
-var app = require('./lib/client.js');
 
 // Command Line Interface
 program
