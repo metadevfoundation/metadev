@@ -24,10 +24,7 @@ if (program.autoDeploy) {
     branch: 'master',
     port: 9001
   }).attach('./deploy.sh', function (err, stdout, stderr) {
-    if (err)
-      winston.error(err);
-    else
-      winston.info(stdout);
+    winston.info(stdout);
   });
   winston.info(`deployer listening on port 9001`);
 }
