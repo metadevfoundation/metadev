@@ -1,7 +1,6 @@
 var koa = require('koa');
 var route = require('koa-route');
 var parse = require('co-body');
-var thunkify = require('thunkify');
 var winston = require('winston');
 
 var quip = require('./lib/api.js');
@@ -17,7 +16,7 @@ var client = new quip.Client({
 var routes = {
 	create: function* () {
 		// var user = yield auth();
-		var params = yield parse.json(this);
+		var params = yield parse(this);
 		var result = yield newDocument({
 			title: params.title,
 			content: params.content,

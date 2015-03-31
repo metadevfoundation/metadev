@@ -1,0 +1,55 @@
+<style>
+  .contact-us {
+    background: #333;
+  }
+
+  .contact-us h2 {
+    color:#DDD;
+  }
+  .contact-col {
+    padding: 5px 80px;
+  }
+</style>
+
+<hr>
+
+<div class="well container contact-us">
+  <div class="row">
+    <div class="contact-col col-lg-12" >
+    <h2>Contact</h2>
+
+    <form id="contact-form" onSubmit="return contactSubmit()">
+      <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="content" placeholder="Powerfully Integrated Textbox of the Wise"></textarea>
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-default">Contact Us</button>
+      </div>
+    </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  var form = d3.select('#contact-form');
+
+  function contactSubmit(e) {
+    console.log('Contact Submit');
+    // form.style('opacity', 0.1);
+    var data = {
+      title: document.getElementById("email").value,
+      content: document.getElementById("content").value
+    }
+    qwest.post('/quip/create', data).then(function(response) {
+      // form.style('opacity', 1);
+    });
+
+    return false;
+  };
+</script>

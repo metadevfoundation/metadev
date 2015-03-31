@@ -1,11 +1,6 @@
 #!/usr/bin/env node
 
-var winston = require('winston');
 var program = require('commander');
-
-var app = require('./lib/client.js');
-var deploy = require('./deploy/deploy.js');
-
 
 // Command Line Interface
 program
@@ -13,7 +8,21 @@ program
   .option('-p, --port <port>', 'specify the port [4000]', '4000')
   .parse(process.argv);
 
+
 //Start App
+var winston = require('winston');
+var koa = require('koa');
+var mount = require('koa-mount');
+var deploy = require('./deploy/deploy.js');
+
+var app = koa();
+
+var quip = require('./quip');
+var portal = require('./portal')(app);
+
+app.use(mount('/quip', quip));
+app.use(mount(portal));
+
 app.listen(program.port);
 winston.info(`server listening on port ${program.port}`);
 
@@ -26,5 +35,6 @@ if (program.autoDeploy) {
   }).attach('./deploy.sh', function (err, stdout, stderr) {
     winston.info(stdout);
   });
+
   winston.info(`deployer listening on port 9001`);
 }
