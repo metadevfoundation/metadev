@@ -1,0 +1,55 @@
+<style>
+
+	svg {
+		shape-rendering: geometricPrecision;
+		z-index: -1;
+	  position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin-top: 60px;
+	}
+
+	line {
+		stroke: url(#gradient);
+		stroke: #2c3e50;
+		stroke-width: 1
+	}
+</style>
+
+<%
+	var linesPerSide = 30;
+
+	var resX = 100;
+	var resY = 100;
+%>
+
+<svg viewBox="0 0 <%= resX %> <%= resY %>" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#2c3e50"/>
+    </linearGradient>
+			<g id="rays">
+			<%
+			for (var i = 0; i < linesPerSide; i++) {
+				stepX = i * resX / linesPerSide;
+				stepY = i * resY / linesPerSide;
+			%>
+				<line	x1="0" y1="0" x2="<%= stepX %>" y2="<%= resY %>" />
+				<line	x1="0" y1="0" x2="<%= resX %>" y2="<%= stepY %>" />
+				<line	x1="0" y1="0" x2="<%= resX %>" y2="<%= resY %>" />
+			<% } %>
+
+			</g>
+  </defs>
+
+		<g>
+			<use xlink:href="#rays" />
+		</g>
+			<g transform="translate(<%= resX %>) scale(-1, 1)">
+				<use xlink:href="#rays" />
+			</g>
+
+</svg>

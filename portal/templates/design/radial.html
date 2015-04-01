@@ -8,10 +8,16 @@
 	}
 
 	svg {
+		z-index: -1;
 	  position: absolute;
 	  height: 100%;
 	  width: 100%;
 	}
+	.container {
+		background: white !important;
+		z-index: 1;
+	}
+
 </style>
 
 <svg width="100" height="150" viewBox="0 50 100 100" preserveAspectRatio="none">
@@ -25,4 +31,5 @@
   </defs>
   <rect width="100" height="150" fill="url(#gradient)"/>
 </svg>
+
 <% } %>

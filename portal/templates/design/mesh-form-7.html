@@ -1,0 +1,61 @@
+<style>
+	body {
+	}
+
+	svg {
+		z-index: -1;
+	  position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.container {
+		background-color: rgba(255, 255, 255, 0.8);
+		z-index: 1;
+	}
+
+	line {
+		stroke: url(#gradient);
+		/*stroke: #555a39;*/
+		stroke-width: 1
+	}
+</style>
+
+<%
+	var linesPerSide = 30;
+
+	var resX = 1000;
+	var resY = 1000;
+%>
+
+<svg viewBox="0 0 <%= resX %> <%= resY %>" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="gradient">
+      <stop offset="0%" stop-color="hsla(100, 0%, 50%, 0)"/>
+      <stop offset="25%" stop-color="hsla(100, 0%, 50%, 1)"/>
+      <stop offset="75%" stop-color="hsla(100, 0%, 50%, 1)"/>
+      <stop offset="100%" stop-color="hsla(0, 0%, 50%, 0)"/>
+    </linearGradient>
+  </defs>
+  <!-- <rect width="100" height="150" fill="url(#gradient)"/> -->
+
+	<%
+	for (var i = 0; i < linesPerSide; i++) {
+		stepX = i * resX / linesPerSide;
+		stepY = i * resY / linesPerSide;
+	%>
+
+	<line	x1="0" y1="0" x2="<%= stepX %>" y2="<%= resY %>" />
+	<line	x1="0" y1="0" x2="<%= resX %>" y2="<%= stepY %>" />
+
+	<line	x1="<%= resX %>" y1="0" x2="<%= stepX %>" y2="<%= resY %>" />
+	<line	x1="<%= resX %>" y1="0" x2="0" y2="<%= stepY %>" />
+	<% } %>
+
+	<line	x1="0" y1="0" x2="<%= resX %>" y2="<%= resY %>" />
+	<line	x1="<%= resX %>" y1="0" x2="<%= resX %>" y2="<%= resY %>" />
+
+
+</svg>
