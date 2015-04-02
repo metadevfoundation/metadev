@@ -4,9 +4,10 @@ var program = require('commander');
 
 // Command Line Interface
 program
-  .option('-d, --auto-deploy', 'github commit -> ./deploy.sh')
-  .option('-p, --port <port>', 'specify the port [4000]', '4000')
-  .parse(process.argv);
+	.option('-d, --auto-deploy', 'github commit -> ./deploy.sh')
+	.option('-w, --watch', 'Webpack the portal templates')
+	.option('-p, --port <port>', 'specify the port [4000]', '4000')
+	.parse(process.argv);
 
 
 //Start App
@@ -28,13 +29,13 @@ winston.info(`server listening on port ${program.port}`);
 
 // Github Deploy Hook
 if (program.autoDeploy) {
-  deploy({
-    repository: 'metagen/metadev',
-    branch: 'master',
-    port: 9001
-  }).attach('./deploy.sh', function (err, stdout, stderr) {
-    winston.info(stdout);
-  });
+	deploy({
+		repository: 'metagen/metadev',
+		branch: 'master',
+		port: 9001
+	}).attach('./deploy.sh', function (err, stdout, stderr) {
+		winston.info(stdout);
+	});
 
-  winston.info(`deployer listening on port 9001`);
+	winston.info(`deployer listening on port 9001`);
 }
