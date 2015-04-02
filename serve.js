@@ -3,27 +3,26 @@
 var winston = require('winston');
 var koa = require('koa');
 var mount = require('koa-mount');
-var deploy = require('./deploy/deploy.js');
+var serve = require('koa-static');
 var program = require('commander');
+var path = require('path');
+// metadev modules
+var deploy = require('./deploy');
+var quip = require('./quip');
 
 // Command Line Interface
 program
 	.option('-d, --auto-deploy', 'github commit -> ./deploy.sh')
-	.option('-w, --watch', 'Webpack the portal templates')
 	.option('-p, --port <port>', 'specify the port [4000]', '4000')
 	.parse(process.argv);
 
 
 var app = koa();
-
-
-app.use(mount('/quip', require('./quip')));
-app.use(mount(require('./portal')(program.watch)));
+app.use(mount('/quip', quip));
+app.use(serve(path.join(__dirname, 'client/static/')));
 
 app.listen(program.port);
-
 winston.info(`server listening on port ${program.port}`);
-
 
 // Github Deploy Hook
 if (program.autoDeploy) {

@@ -1,0 +1,61 @@
+body {
+	background: white;
+}
+
+.header a {
+	color: #111;
+
+}
+
+.center {
+	background: white;
+	padding-top: 40px;
+	position: relative;
+	z-index: 100;
+	max-width: 1200px;
+	margin: auto;
+	box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);
+	overflow: hidden;
+}
+
+.header-drop {
+	color: #EEE;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-top: 1em;
+
+}
+
+.header-drop h1 {
+	line-height: 3em;
+	text-align: center;
+}
+
+.paragraphs {
+
+}
+.pitch-row {
+	margin: 5px auto;
+	padding: 10px;
+}
+.content .row img {
+	margin: auto;
+}
+hr.soften {
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));
+  border: 0;
+}
+.contact-us {
+  background: #333;
+}
+
+.contact-us h2 {
+  color:#DDD;
+}
+.contact-col {
+  padding: 5px 80px;
+}

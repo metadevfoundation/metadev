@@ -1,27 +1,22 @@
 {
-  "name": "metadev",
-  "version": "1.0.0",
-  "description": "",
-  "author": "Daniel Sont <dan.sont@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "co-body": "^1.1.0",
-    "commander": "^2.7.1",
-    "ejs-compiled-loader": "^0.2.0",
-    "gith": "^1.0.4",
-    "html-loader": "^0.2.3",
-    "koa": "^0.18.1",
-    "koa-ejs": "^1.1.3",
-    "koa-logger": "^1.2.2",
-    "koa-mount": "^1.3.0",
-    "koa-route": "^2.4.0",
-    "koa-static": "^1.4.9",
-    "lodash": "^3.6.0",
-    "webpack": "^1.7.3",
-    "winston": "^0.9.0"
-  },
-  "devDependencies": {
-    "mocha": "^2.2.1",
-    "supertest": "^0.15.0"
-  }
+	"name": "metadev",
+	"version": "1.0.0",
+	"description": "",
+	"author": "Daniel Sont <dan.sont@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"co-body": "^1.1.0",
+		"commander": "^2.7.1",
+		"gith": "^1.0.4",
+		"koa": "^0.18.1",
+		"koa-logger": "^1.2.2",
+		"koa-mount": "^1.3.0",
+		"koa-route": "^2.4.0",
+		"koa-static": "^1.4.9",
+		"winston": "^0.9.0"
+	},
+	"devDependencies": {
+		"mocha": "^2.2.1",
+		"supertest": "^0.15.0"
+	}
 }
