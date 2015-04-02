@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+var winston = require('winston');
+var koa = require('koa');
+var mount = require('koa-mount');
+var deploy = require('./deploy/deploy.js');
 var program = require('commander');
 
 // Command Line Interface
@@ -10,22 +14,16 @@ program
 	.parse(process.argv);
 
 
-//Start App
-var winston = require('winston');
-var koa = require('koa');
-var mount = require('koa-mount');
-var deploy = require('./deploy/deploy.js');
-
 var app = koa();
 
-var quip = require('./quip');
-var portal = require('./portal/portal.js')
 
-app.use(mount('/quip', quip));
-app.use(mount(portal));
+app.use(mount('/quip', require('./quip')));
+app.use(mount(require('./portal')(program.watch)));
 
 app.listen(program.port);
+
 winston.info(`server listening on port ${program.port}`);
+
 
 // Github Deploy Hook
 if (program.autoDeploy) {
