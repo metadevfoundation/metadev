@@ -18,7 +18,7 @@ var deploy = require('./deploy/deploy.js');
 var app = koa();
 
 var quip = require('./quip');
-var portal = require('./portal')(app);
+var portal = require('./portal/portal.js')
 
 app.use(mount('/quip', quip));
 app.use(mount(portal));
