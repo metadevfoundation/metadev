@@ -1,0 +1,18 @@
+.page-nav {
+	line-height: 120px;
+  padding: 0 60px;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.page-nav .title {
+	padding: 0 15px;
+  font-size: 120%;
+}
+
+.page-nav a {
+	padding: 0 15px;
+	text-decoration: none;
+	color: #111;
+  font-size: 105%;
+}

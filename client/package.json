@@ -1,18 +1,19 @@
 {
-  "name": "metadev-client",
-  "version": "1.0.0",
-  "description": "Client of MetaDev",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "css-loader": "^0.9.1",
-    "ejs-compiled-loader": "^0.2.0",
-    "html-loader": "^0.2.3",
-    "markdown-loader": "^0.1.2",
-    "style-loader": "^0.9.0"
-  }
+	"name": "metadev-client",
+	"version": "1.0.0",
+	"description": "Client of MetaDev",
+	"author": "",
+	"license": "ISC",
+	"scripts": {
+		"build": "webpack",
+		"watch": "webpack -w",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"css-loader": "^0.9.1",
+		"ejs-compiled-loader": "^0.2.0",
+		"html-loader": "^0.2.3",
+		"markdown-loader": "^0.1.2",
+		"style-loader": "^0.9.0"
+	}
 }

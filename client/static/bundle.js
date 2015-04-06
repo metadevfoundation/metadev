@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var index = __webpack_require__(1);
+	var page = __webpack_require__(1);
 
 	document.addEventListener("DOMContentLoaded", function () {
-	  document.body.innerHTML = index({});
+		document.body.innerHTML = page({});
 	});
 
 
@@ -61,7 +61,7 @@
 	    };
 	    var __stack = {
 	        lineno: 1,
-	        input: "\n<% require('./all.css') %>\n<%- require('./components/header.html') %>\n<%- require('./design/mesh-form.ejs')() %>\n\n<div class=\"center\">\n\n	<%- require('./components/paragraphs.ejs')() %>\n\n	<%- require('./components/04-team.html') %>\n	<%- require('./components/05-contact-us.html') %>\n</div>\n",
+	        input: "<%\n\nvar styles = require('./index.css');\n\nvar header = require('./components/header');\nvar graphPaper = require('./components/graph-paper');\nvar infographic = require('./components/infographic');\nvar divider = require('./components/divider');\n\n\nvar rows = [{\n  graphic: require('./content/graphic-1.html'),\n  body: require('./content/body-1.md'),\n}, {\n  graphic: require('./content/graphic-2.html'),\n  body: require('./content/body-2.md'),\n}, {\n  graphic: require('./content/graphic-3.html'),\n  body: require('./content/body-3.md'),\n}];\n\n%>\n\n<%- graphPaper() %>\n<%- header() %>\n<style media=\"screen\">\n  .page {\n    background: white;\n    max-width: 1200px;\n    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);\n    margin: auto;\n    box-sizing: border-box;\n    padding: 2rem;\n  }\n  .page-title {\n    padding-left: 2rem;\n    font-size: 24px;\n    line-height: 24px;\n    height: 24px;\n  }\n</style>\n<div class=\"page\">\n  <div class=\"row middle-xs\">\n    <div class=\"col-xs-4\">\n      <h1 class=\"page-title\">Introduction</small></h1>\n    </div>\n  </div>\n  <%- divider() %>\n  <%- infographic(rows[0]) %>\n  <%- divider() %>\n  <%- infographic(rows[1]) %>\n  <%- divider() %>\n  <%- infographic(rows[2]) %>\n</div>\n",
 	        filename: "."
 	    };
 	    function rethrow(err, str, filename, lineno) {
@@ -78,10 +78,24 @@
 	        var buf = [];
 	        with (locals || {}) {
 	            (function() {
-	                buf.push("\n");
-	                __stack.lineno = 2;
-	                __webpack_require__(3);
-	                buf.push("\n", (__stack.lineno = 3, __webpack_require__(5)), "\n", (__stack.lineno = 4, __webpack_require__(2)()), '\n\n<div class="center">\n\n	', (__stack.lineno = 8, __webpack_require__(14)()), "\n\n	", (__stack.lineno = 10, __webpack_require__(7)), "\n	", (__stack.lineno = 11, __webpack_require__(8)), "\n</div>\n");
+	                buf.push("");
+	                __stack.lineno = 1;
+	                var styles = __webpack_require__(12);
+	                var header = __webpack_require__(2);
+	                var graphPaper = __webpack_require__(3);
+	                var infographic = __webpack_require__(4);
+	                var divider = __webpack_require__(5);
+	                var rows = [ {
+	                    graphic: __webpack_require__(6),
+	                    body: __webpack_require__(9)
+	                }, {
+	                    graphic: __webpack_require__(7),
+	                    body: __webpack_require__(10)
+	                }, {
+	                    graphic: __webpack_require__(8),
+	                    body: __webpack_require__(11)
+	                } ];
+	                buf.push("\n\n", (__stack.lineno = 24, graphPaper()), "\n", (__stack.lineno = 25, header()), '\n<style media="screen">\n  .page {\n    background: white;\n    max-width: 1200px;\n    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);\n    margin: auto;\n    box-sizing: border-box;\n    padding: 2rem;\n  }\n  .page-title {\n    padding-left: 2rem;\n    font-size: 24px;\n    line-height: 24px;\n    height: 24px;\n  }\n</style>\n<div class="page">\n  <div class="row middle-xs">\n    <div class="col-xs-4">\n      <h1 class="page-title">Introduction</small></h1>\n    </div>\n  </div>\n  ', (__stack.lineno = 48, divider()), "\n  ", (__stack.lineno = 49, infographic(rows[0])), "\n  ", (__stack.lineno = 50, divider()), "\n  ", (__stack.lineno = 51, infographic(rows[1])), "\n  ", (__stack.lineno = 52, divider()), "\n  ", (__stack.lineno = 53, infographic(rows[2])), "\n</div>\n");
 	            })();
 	        }
 	        return buf.join("");
@@ -92,6 +106,190 @@
 
 /***/ },
 /* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var styles = __webpack_require__(19);
+	var html = __webpack_require__(21);
+
+	module.exports = function () {
+	  return html;
+	};
+
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var graphPaper = __webpack_require__(18)();
+
+	module.exports = function () {
+	  return graphPaper;
+	}
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var row = __webpack_require__(17);
+
+	module.exports = function (config) {
+		return row(config);
+	};
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var html = __webpack_require__(14);
+	var styles = __webpack_require__(15);
+
+	module.exports = function () {
+	  return html;
+	}
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<i class=\"fa fa-question\" style=\"font-size: 181px\"></i>\n";
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<img src=\"/oshw-logo-outline.svg\"/>\n";
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<i class=\"fa fa-calendar\" style=\"font-size: 181px\"></i>\n";
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<h4 id=\"the-action\">The Action</h4>\n<p>We design, co-design, and facilitate the manufacture and monetization of products which:</p>\n<ol>\n<li>Give their users new abilities (empowerment)</li>\n<li>Reduce the power of unearned influence</li>\n<li>Contribute to the global commons by open sourcing design</li>\n<li>Make the world a better, safer place.  </li>\n</ol>\n<p>We help open startups make it from vision to profitability through consultation, facilitation, and directly adding to their team through our pool of experts.  </p>\n<p>Additionally, our team of independent in-house experts teaches next-generation computing concepts and researches block-chains and e-commerce solutions.</p>\n";
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<h4 id=\"the-platform\">The Platform</h4>\n<ul>\n<li><p>A Hybrid Organization: Workspace + learning + manufacturing + global sales</p>\n</li>\n<li><p>An infrastructure platform for startups with high monetization potential and an understanding of next generation business models and technologies.</p>\n</li>\n<li>A tangible gathering space for open source community leaders and beginners alike to exchange their views.</li>\n<li>A knowledge-sharing community aimed at helping people from all backgrounds do the work they are passionate about together.</li>\n</ul>\n";
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<h4 id=\"the-strategy\">The Strategy</h4>\n<ol>\n<li>Build a multidisciplinary team and provide them with all of the resources needed to rapidly prototype and manufacture hardware, software, webware, and service-based solutions for the emergent &quot;internet of things,&quot; as well as traditional computing devices.</li>\n<li>Develop and <strong>commercialize</strong> open hardware products that span every price bracket using modular components.</li>\n<li>Develop open software with clear applications in today&#39;s world.</li>\n<li>Run a firmware repository containing firmware for both open and opened technology platforms.</li>\n<li>Leverage our 100% transparent, open business model to enhance our competitive advantage in: recruiting, customers&#39; and suppliers understanding of our strategies, and public awareness of our solutions</li>\n<li>In order to have an excellent product pipeline and top talent, support open technology projects of every type.</li>\n<li>Intentionally integrate our projects and corporate ownership as appropriate, while seeking further integration opportunities.</li>\n</ol>\n";
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(13);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(22)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/index.css", function() {
+			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/index.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(23)();
+	exports.push([module.id, "\nbody {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n\n\tfont-family: \"Lato\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n\tfont-size: 15px;\n\tline-height: 1.42857143;\n\tcolor: #2c3e50;\n\tbackground-color: #ffffff;\n}\n\n.contact-us {\n  background: #333;\n}\n\n.contact-us h2 {\n  color:#DDD;\n}\n.contact-col {\n  padding: 5px 80px;\n}\n\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\n.h1,\n.h2,\n.h3,\n.h4,\n.h5,\n.h6 {\n  font-family: \"Lato\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 400;\n  line-height: 1.1;\n  color: inherit;\n}\nh1 small,\nh2 small,\nh3 small,\nh4 small,\nh5 small,\nh6 small,\n.h1 small,\n.h2 small,\n.h3 small,\n.h4 small,\n.h5 small,\n.h6 small,\nh1 .small,\nh2 .small,\nh3 .small,\nh4 .small,\nh5 .small,\nh6 .small,\n.h1 .small,\n.h2 .small,\n.h3 .small,\n.h4 .small,\n.h5 .small,\n.h6 .small {\n  font-weight: normal;\n  line-height: 1;\n  color: #b4bcc2;\n}\nh1,\n.h1,\nh2,\n.h2,\nh3,\n.h3 {\n  margin-top: 21px;\n  margin-bottom: 10.5px;\n}\nh1 small,\n.h1 small,\nh2 small,\n.h2 small,\nh3 small,\n.h3 small,\nh1 .small,\n.h1 .small,\nh2 .small,\n.h2 .small,\nh3 .small,\n.h3 .small {\n  font-size: 65%;\n}\nh4,\n.h4,\nh5,\n.h5,\nh6,\n.h6 {\n  margin-top: 10.5px;\n  margin-bottom: 10.5px;\n}\nh4 small,\n.h4 small,\nh5 small,\n.h5 small,\nh6 small,\n.h6 small,\nh4 .small,\n.h4 .small,\nh5 .small,\n.h5 .small,\nh6 .small,\n.h6 .small {\n  font-size: 75%;\n}\nh1,\n.h1 {\n  font-size: 39px;\n}\nh2,\n.h2 {\n  font-size: 32px;\n}\nh3,\n.h3 {\n  font-size: 26px;\n}\nh4,\n.h4 {\n  font-size: 19px;\n}\nh5,\n.h5 {\n  font-size: 15px;\n}\nh6,\n.h6 {\n  font-size: 13px;\n}\np {\n  margin: 0 0 10.5px;\n}\n", ""]);
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<hr class=\"soften\">\n";
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(16);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(22)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css", function() {
+			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(23)();
+	exports.push([module.id, "hr.soften {\n  margin: 30px 10px;\n  height: 1px;\n  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  border: 0;\n}\n", ""]);
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function anonymous(locals, filters, escape, rethrow) {
+	    escape = escape || function(html) {
+	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+	    };
+	    var __stack = {
+	        lineno: 1,
+	        input: '<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		<%- graphic %>\n	</div>\n	<div class="col-xs-8">\n		<%- body %>\n	</div>\n</div>\n',
+	        filename: "."
+	    };
+	    function rethrow(err, str, filename, lineno) {
+	        var lines = str.split("\n"), start = Math.max(lineno - 3, 0), end = Math.min(lines.length, lineno + 3);
+	        var context = lines.slice(start, end).map(function(line, i) {
+	            var curr = i + start + 1;
+	            return (curr == lineno ? " >> " : "    ") + curr + "| " + line;
+	        }).join("\n");
+	        err.path = filename;
+	        err.message = (filename || "ejs") + ":" + lineno + "\n" + context + "\n\n" + err.message;
+	        throw err;
+	    }
+	    try {
+	        var buf = [];
+	        with (locals || {}) {
+	            (function() {
+	                buf.push('<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		', (__stack.lineno = 3, graphic), '\n	</div>\n	<div class="col-xs-8">\n		', (__stack.lineno = 6, body), "\n	</div>\n</div>\n");
+	            })();
+	        }
+	        return buf.join("");
+	    } catch (err) {
+	        rethrow(err, __stack.input, __stack.filename, __stack.lineno);
+	    }
+	}
+
+/***/ },
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
@@ -148,21 +346,21 @@
 	}
 
 /***/ },
-/* 3 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(4);
+	var content = __webpack_require__(20);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
+	var update = __webpack_require__(22)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/all.css", function() {
-			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/all.css");
+		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css", function() {
+			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -171,51 +369,20 @@
 	}
 
 /***/ },
-/* 4 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(13)();
-	exports.push([module.id, "body {\n\tbackground: white;\n}\n\n.header a {\n\tcolor: #111;\n\n}\n\n.center {\n\tbackground: white;\n\tpadding-top: 40px;\n\tposition: relative;\n\tz-index: 100;\n\tmax-width: 1200px;\n\tmargin: auto;\n\tbox-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);\n\toverflow: hidden;\n}\n\n.header-drop {\n\tcolor: #EEE;\n\tmargin-top: 15px;\n\tmargin-bottom: 15px;\n\tpadding-top: 1em;\n\n}\n\n.header-drop h1 {\n\tline-height: 3em;\n\ttext-align: center;\n}\n\n.paragraphs {\n\n}\n.pitch-row {\n\tmargin: 5px auto;\n\tpadding: 10px;\n}\n.content .row img {\n\tmargin: auto;\n}\nhr.soften {\n  height: 1px;\n  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  border: 0;\n}\n.contact-us {\n  background: #333;\n}\n\n.contact-us h2 {\n  color:#DDD;\n}\n.contact-col {\n  padding: 5px 80px;\n}\n", ""]);
+	exports = module.exports = __webpack_require__(23)();
+	exports.push([module.id, ".page-nav {\n\tline-height: 120px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n\tcolor: #111;\n  font-size: 105%;\n}\n", ""]);
 
 /***/ },
-/* 5 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"container header-drop\">\n\n\t<nav class=\"navbar header\" role=\"navigation\">\n\t\t<div class=\"container\" >\n\t\t\t<div class=\"row\">\n\n\t\t\t\t<div class=\"navbar-header \">\n\t\t\t\t\t<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#top-menu\">\n\t\t\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t\t</button>\n\n\n\t\t\t\t\t<a class=\"navbar-brand\" href=\"/\">MetaDev Foundation</a>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"top-menu\">\n\t\t\t\t\t<ul class=\"nav navbar-nav\">\n\t\t\t\t\t\t<li><a href=\"http://forum.metadevfoundation.org\">Forums</a></li>\n\t\t\t\t\t\t<li><a href=\"http://blog.metadevfoundation.org\">Blog</a></li>\n\t\t\t\t\t\t<li><a href=\"http://shop.metadevfoundation.org:3000\">Shop</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</nav>\n\n</div>\n";
+	module.exports = "<div class=\"row between-xs page-nav\">\n\t\t<span class=\"title\">MetaDev Foundation</span>\n\n\t\t<div class=\"box\">\n\t\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t\t<a href=\"http://shop.metadevfoundation.org:3000\">Shop</a>\n\t\t</div>\n</div>\n";
 
 /***/ },
-/* 6 */,
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "\n\n<div class=\"container\">\n\t<div class=\"row\">\n\t\t<div class=\"col-lg-12\">\n\t\t\t<h2>Team</h2>\n\t\t\t<img class=\"img-thumbnail\" src=\"http://placehold.it/150x150\" alt=\"Dan the Man\">\n\t\t\t<img class=\"img-thumbnail\" src=\"http://placehold.it/150x150\" alt=\"Dan the Man\">\n\t\t\t<img class=\"img-thumbnail\" src=\"http://placehold.it/150x150\" alt=\"Dan the Man\">\n\t\t\t<img class=\"img-thumbnail\" src=\"http://placehold.it/150x150\" alt=\"Dan the Man\">\n\t\t\t<img class=\"img-thumbnail\" src=\"http://placehold.it/150x150\" alt=\"Dan the Man\">\n\t\t</div>\n\t</div>\n</div>\n";
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<hr>\n\n<div class=\"well container contact-us\">\n  <div class=\"row\">\n    <div class=\"contact-col col-lg-12\" >\n    <h2>Join Us</h2>\n\n    <form id=\"contact-form\" onSubmit=\"return contactSubmit()\">\n      <div class=\"form-group\">\n        <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"Email\">\n      </div>\n      <div class=\"form-group\">\n        <textarea class=\"form-control\" id=\"content\" placeholder=\"Powerfully Integrated Textbox of the Wise\"></textarea>\n      </div>\n      <div class=\"form-group\">\n          <button type=\"submit\" class=\"btn btn-default\">Contact Us</button>\n      </div>\n    </form>\n\n    </div>\n  </div>\n</div>\n\n\n\n<script>\n  var form = d3.select('#contact-form');\n\n  function contactSubmit(e) {\n    console.log('Contact Submit');\n    // form.style('opacity', 0.1);\n    var data = {\n      title: document.getElementById(\"email\").value,\n      content: document.getElementById(\"content\").value\n    }\n    qwest.post('/quip/create', data).then(function(response) {\n      // form.style('opacity', 1);\n    });\n\n    return false;\n  };\n</script>\n";
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<h2 id=\"why-metadev-\">Why MetaDev?</h2>\n<p>There is a clear opportunity to improve the world by creating products that empower and enrich their users, disrupting systems that create economic and social inequality. We think that rapid, iterative improvements in production techniques, collaborative technologies, and intellectual property management are not only possible but within reach and that we have a duty to reach for it. We want to see a future where diffuse global wealth is the norm, and we&#39;re building the tools necessary to take the next step towards that future.</p>\n";
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<h2 id=\"what-is-metadev-\">What is MetaDev?</h2>\n<ul>\n<li><p>A Hybrid Organization: Workspace + learning + manufacturing + global sales</p>\n</li>\n<li><p>An infrastructure platform for startups with high monetization potential and an understanding of next generation business models and technologies.</p>\n</li>\n<li>A tangible gathering space for open source community leaders and beginners alike to exchange their views.</li>\n<li>A knowledge-sharing community aimed at helping people from all backgrounds do the work they are passionate about together.</li>\n</ul>\n";
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<h2 id=\"how-\">How?</h2>\n<ol>\n<li>Build a multidisciplinary team and provide them with all of the resources needed to rapidly prototype and manufacture hardware, software, webware, and service-based solutions for the emergent &quot;internet of things,&quot; as well as traditional computing devices.</li>\n<li>Develop and <strong>commercialize</strong> open hardware products that span every price bracket using modular components.</li>\n<li>Develop open software with clear applications in today&#39;s world.</li>\n<li>Run a firmware repository containing firmware for both open and opened technology platforms.</li>\n<li>Leverage our 100% transparent, open business model to enhance our competitive advantage in: recruiting, customers&#39; and suppliers understanding of our strategies, and public awareness of our solutions</li>\n<li>In order to have an excellent product pipeline and top talent, support open technology projects of every type.</li>\n<li>Intentionally integrate our projects and corporate ownership as appropriate, while seeking further integration opportunities.</li>\n</ol>\n";
-
-/***/ },
-/* 12 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -411,7 +578,7 @@
 
 
 /***/ },
-/* 13 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function() {
@@ -429,42 +596,6 @@
 			return result.join("");
 		};
 		return list;
-	}
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = function anonymous(locals, filters, escape, rethrow) {
-	    escape = escape || function(html) {
-	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
-	    };
-	    var __stack = {
-	        lineno: 1,
-	        input: '<div class="container paragraphs">\n	<div class="row pitch-row">\n		<div class="col-lg-4 col-md-5 col-sm-5">\n			<img src="http://placehold.it/200x200" class="img-responsive" alt="" />\n		</div>\n		<div class="col-lg-8 col-md-7 col-sm-7">\n			<%- require(\'./p1.md\') %>\n		</div>\n	</div>\n\n	<div class="row pitch-row">\n		<div class="col-lg-4 col-md-5 col-sm-5">\n			<img src="http://placehold.it/200x200" class="img-responsive" alt="" />\n		</div>\n		<div class="col-lg-8 col-md-7 col-sm-7">\n			<%- require(\'./p2.md\') %>\n		</div>\n	</div>\n	<hr class="soften">\n	<div class="row pitch-row">\n		<div class="col-lg-4 col-md-5 col-sm-5">\n			<img src="http://placehold.it/200x200" class="img-responsive" alt="" />\n		</div>\n		<div class="col-lg-8 col-md-7 col-sm-7">\n			<%- require(\'./p3.md\') %>\n		</div>\n	</div>\n</div>\n',
-	        filename: "."
-	    };
-	    function rethrow(err, str, filename, lineno) {
-	        var lines = str.split("\n"), start = Math.max(lineno - 3, 0), end = Math.min(lines.length, lineno + 3);
-	        var context = lines.slice(start, end).map(function(line, i) {
-	            var curr = i + start + 1;
-	            return (curr == lineno ? " >> " : "    ") + curr + "| " + line;
-	        }).join("\n");
-	        err.path = filename;
-	        err.message = (filename || "ejs") + ":" + lineno + "\n" + context + "\n\n" + err.message;
-	        throw err;
-	    }
-	    try {
-	        var buf = [];
-	        with (locals || {}) {
-	            (function() {
-	                buf.push('<div class="container paragraphs">\n	<div class="row pitch-row">\n		<div class="col-lg-4 col-md-5 col-sm-5">\n			<img src="http://placehold.it/200x200" class="img-responsive" alt="" />\n		</div>\n		<div class="col-lg-8 col-md-7 col-sm-7">\n			', (__stack.lineno = 7, __webpack_require__(9)), '\n		</div>\n	</div>\n\n	<div class="row pitch-row">\n		<div class="col-lg-4 col-md-5 col-sm-5">\n			<img src="http://placehold.it/200x200" class="img-responsive" alt="" />\n		</div>\n		<div class="col-lg-8 col-md-7 col-sm-7">\n			', (__stack.lineno = 16, __webpack_require__(10)), '\n		</div>\n	</div>\n	<hr class="soften">\n	<div class="row pitch-row">\n		<div class="col-lg-4 col-md-5 col-sm-5">\n			<img src="http://placehold.it/200x200" class="img-responsive" alt="" />\n		</div>\n		<div class="col-lg-8 col-md-7 col-sm-7">\n			', (__stack.lineno = 25, __webpack_require__(11)), "\n		</div>\n	</div>\n</div>\n");
-	            })();
-	        }
-	        return buf.join("");
-	    } catch (err) {
-	        rethrow(err, __stack.input, __stack.filename, __stack.lineno);
-	    }
 	}
 
 /***/ }

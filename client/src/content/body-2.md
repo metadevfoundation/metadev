@@ -1,4 +1,4 @@
-## What is MetaDev?
+#### The Platform
 
  - A Hybrid Organization: Workspace + learning + manufacturing + global sales
 

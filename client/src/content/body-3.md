@@ -1,4 +1,4 @@
-## How?
+#### The Strategy
 
 1. Build a multidisciplinary team and provide them with all of the resources needed to rapidly prototype and manufacture hardware, software, webware, and service-based solutions for the emergent "internet of things," as well as traditional computing devices.
 2. Develop and **commercialize** open hardware products that span every price bracket using modular components.

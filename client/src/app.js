@@ -1,5 +1,5 @@
-var index = require('./index.ejs');
+var page = require('./page.ejs');
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.body.innerHTML = index({});
+	document.body.innerHTML = page({});
 });
