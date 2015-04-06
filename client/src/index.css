@@ -7,7 +7,7 @@ body {
 	font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 15px;
 	line-height: 1.42857143;
-  background-color: white;
+  background-color: #EEE;
 }
 
 body, a {
@@ -15,19 +15,26 @@ body, a {
 }
 
 .page {
+  color: #23232F;
   background: white;
   max-width: 1200px;
-  box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);
-  margin: auto;
+  box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.12);
+  margin: 0 auto 0 auto;
   box-sizing: border-box;
   padding: 2rem;
+  padding-bottom: 4em;
 }
 
 .page-title {
   padding-left: 2rem;
   font-size: 24px;
-  line-height: 24px;
-  height: 24px;
+}
+
+
+.team {
+  /*box-shadow: 0 0 16px 1px rgba(0,0,0,0.52);*/
+  /*border-top: 1px solid #B32B2B;*/
+  margin: 5px auto 0 auto;
 }
 
 .contact-us {

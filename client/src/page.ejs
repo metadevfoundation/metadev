@@ -21,34 +21,36 @@ var rows = [{
 %>
 
 <%- graphPaper() %>
-<%- header() %>
 <div class="page">
-  <div class="row middle-xs">
-    <div class="col-xs-4">
-      <h1 class="page-title">MetaDev Foundation</small></h1>
-    </div>
-  </div>
+  <%- header() %>
+
   <%- divider() %>
   <%- infographic(rows[0]) %>
   <%- divider() %>
   <%- infographic(rows[1]) %>
   <%- divider() %>
   <%- infographic(rows[2]) %>
-  <%- divider() %>
 </div>
-
-<div class="page" style="margin-top: 30px">
-  <div class="row middle-xs">
-    <div class="col-xs-4">
-      <h1 class="page-title">The Team</small></h1>
+<div class="page" style="background: #346; border: 1px solid #DDD; color: white">
+  <div class="row center-xs middle-xs">
+    <div class="col-xs-3">
+      <h4>The Team</h4>
+    </div>
+    <div class="col-xs-9 start-xs">
+      <%- team() %>
     </div>
   </div>
   <%- divider() %>
   <div class="row middle-xs">
-    <div class="col-xs-6">
-      <%- require('./content/team.md') %>
+    <div class="col-xs-3 center-xs ">
+      <h4>Founding Meetings</h4>
     </div>
-    <img class="col-xs-6" src="/team-all.jpg" alt="" />
+    <div class="col-xs-3">
+      <img style="max-width: 250px" src="/team-all.jpg" alt="" />
+    </div>
+    <div class="col-xs-3">
+      <img style="max-width: 250px" src="/team-all-2.png" alt="" />
+    </div>
+
   </div>
-    <%- team() %>
 </div>
