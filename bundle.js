@@ -146,8 +146,8 @@
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var styles = __webpack_require__(18);
-	var html = __webpack_require__(20);
+	var styles = __webpack_require__(19);
+	var html = __webpack_require__(21);
 
 	module.exports = function () {
 	  return html;
@@ -158,7 +158,7 @@
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var graphPaper = __webpack_require__(22)();
+	var graphPaper = __webpack_require__(18)();
 
 	module.exports = function () {
 	  return graphPaper;
@@ -169,7 +169,7 @@
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var row = __webpack_require__(21);
+	var row = __webpack_require__(22);
 
 	module.exports = function (config) {
 		return row(config);
@@ -200,9 +200,6 @@
 		caption: 'Dan',
 		url: '/team-dan.jpg'
 	}, {
-		caption: 'Jake',
-		url: '/team-jake.png'
-	}, {
 		caption: 'Hai Bac',
 		url: '/team-haibac.png'
 	}, {
@@ -211,6 +208,9 @@
 	}, {
 		caption: 'Dung',
 		url: '/team-minhha.png'
+	}, {
+		caption: 'Jake',
+		url: '/team-jake.png'
 	}, {
 		caption: 'Dung',
 		url: '/team-dung.png'
@@ -494,78 +494,6 @@
 /* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(19);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css", function() {
-			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(30)();
-	exports.push([module.id, ".page-nav {\n\tline-height: 60px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n  font-size: 105%;\n}\n", ""]);
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"row between-xs page-nav\">\n  <div>\n\t\t<span class=\"page-title\">MetaDev Foundation</span>\n  </div>\n\n\t<div class=\"box\">\n\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t<a href=\"http://shop.metadevfoundation.org:3000\">Shop</a>\n\t</div>\n</div>\n";
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = function anonymous(locals, filters, escape, rethrow) {
-	    escape = escape || function(html) {
-	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
-	    };
-	    var __stack = {
-	        lineno: 1,
-	        input: '<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		<%- graphic %>\n	</div>\n	<div class="col-xs-8">\n		<%- body %>\n	</div>\n</div>\n',
-	        filename: "."
-	    };
-	    function rethrow(err, str, filename, lineno) {
-	        var lines = str.split("\n"), start = Math.max(lineno - 3, 0), end = Math.min(lines.length, lineno + 3);
-	        var context = lines.slice(start, end).map(function(line, i) {
-	            var curr = i + start + 1;
-	            return (curr == lineno ? " >> " : "    ") + curr + "| " + line;
-	        }).join("\n");
-	        err.path = filename;
-	        err.message = (filename || "ejs") + ":" + lineno + "\n" + context + "\n\n" + err.message;
-	        throw err;
-	    }
-	    try {
-	        var buf = [];
-	        with (locals || {}) {
-	            (function() {
-	                buf.push('<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		', (__stack.lineno = 3, graphic), '\n	</div>\n	<div class="col-xs-8">\n		', (__stack.lineno = 6, body), "\n	</div>\n</div>\n");
-	            })();
-	        }
-	        return buf.join("");
-	    } catch (err) {
-	        rethrow(err, __stack.input, __stack.filename, __stack.lineno);
-	    }
-	}
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
 	    escape = escape || function(html) {
 	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
@@ -611,6 +539,78 @@
 	                    __stack.lineno = 49;
 	                }
 	                buf.push('\n\n\n			</g>\n  </defs>\n\n		<g>\n			<use xlink:href="#rays" transform="translate(40, -180) rotate(15) translate(350, 10) scale(1.5, 1.5)" />\n		</g>\n\n</svg>\n');
+	            })();
+	        }
+	        return buf.join("");
+	    } catch (err) {
+	        rethrow(err, __stack.input, __stack.filename, __stack.lineno);
+	    }
+	}
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(20);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(17)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css", function() {
+			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(30)();
+	exports.push([module.id, ".page-nav {\n\tline-height: 60px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n  font-size: 105%;\n}\n", ""]);
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"row between-xs page-nav\">\n  <div>\n\t\t<span class=\"page-title\">MetaDev Foundation</span>\n  </div>\n\n\t<div class=\"box\">\n\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t<a href=\"http://shop.metadevfoundation.org:3000\">Shop</a>\n\t</div>\n</div>\n";
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function anonymous(locals, filters, escape, rethrow) {
+	    escape = escape || function(html) {
+	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+	    };
+	    var __stack = {
+	        lineno: 1,
+	        input: '<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		<%- graphic %>\n	</div>\n	<div class="col-xs-8">\n		<%- body %>\n	</div>\n</div>\n',
+	        filename: "."
+	    };
+	    function rethrow(err, str, filename, lineno) {
+	        var lines = str.split("\n"), start = Math.max(lineno - 3, 0), end = Math.min(lines.length, lineno + 3);
+	        var context = lines.slice(start, end).map(function(line, i) {
+	            var curr = i + start + 1;
+	            return (curr == lineno ? " >> " : "    ") + curr + "| " + line;
+	        }).join("\n");
+	        err.path = filename;
+	        err.message = (filename || "ejs") + ":" + lineno + "\n" + context + "\n\n" + err.message;
+	        throw err;
+	    }
+	    try {
+	        var buf = [];
+	        with (locals || {}) {
+	            (function() {
+	                buf.push('<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		', (__stack.lineno = 3, graphic), '\n	</div>\n	<div class="col-xs-8">\n		', (__stack.lineno = 6, body), "\n	</div>\n</div>\n");
 	            })();
 	        }
 	        return buf.join("");
