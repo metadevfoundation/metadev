@@ -80,20 +80,20 @@
 	            (function() {
 	                buf.push("");
 	                __stack.lineno = 1;
-	                var styles = __webpack_require__(12);
+	                var styles = __webpack_require__(6);
 	                var header = __webpack_require__(2);
 	                var graphPaper = __webpack_require__(3);
 	                var infographic = __webpack_require__(4);
 	                var divider = __webpack_require__(5);
 	                var rows = [ {
-	                    graphic: __webpack_require__(6),
-	                    body: __webpack_require__(9)
-	                }, {
-	                    graphic: __webpack_require__(7),
-	                    body: __webpack_require__(10)
-	                }, {
 	                    graphic: __webpack_require__(8),
 	                    body: __webpack_require__(11)
+	                }, {
+	                    graphic: __webpack_require__(9),
+	                    body: __webpack_require__(12)
+	                }, {
+	                    graphic: __webpack_require__(10),
+	                    body: __webpack_require__(13)
 	                } ];
 	                buf.push("\n\n", (__stack.lineno = 24, graphPaper()), "\n", (__stack.lineno = 25, header()), '\n<style media="screen">\n  .page {\n    background: white;\n    max-width: 1200px;\n    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);\n    margin: auto;\n    box-sizing: border-box;\n    padding: 2rem;\n  }\n  .page-title {\n    padding-left: 2rem;\n    font-size: 24px;\n    line-height: 24px;\n    height: 24px;\n  }\n</style>\n<div class="page">\n  <div class="row middle-xs">\n    <div class="col-xs-4">\n      <h1 class="page-title">Introduction</small></h1>\n    </div>\n  </div>\n  ', (__stack.lineno = 48, divider()), "\n  ", (__stack.lineno = 49, infographic(rows[0])), "\n  ", (__stack.lineno = 50, divider()), "\n  ", (__stack.lineno = 51, infographic(rows[1])), "\n  ", (__stack.lineno = 52, divider()), "\n  ", (__stack.lineno = 53, infographic(rows[2])), "\n</div>\n");
 	            })();
@@ -108,8 +108,8 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var styles = __webpack_require__(19);
-	var html = __webpack_require__(21);
+	var styles = __webpack_require__(20);
+	var html = __webpack_require__(22);
 
 	module.exports = function () {
 	  return html;
@@ -120,7 +120,7 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var graphPaper = __webpack_require__(18)();
+	var graphPaper = __webpack_require__(19)();
 
 	module.exports = function () {
 	  return graphPaper;
@@ -131,7 +131,7 @@
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var row = __webpack_require__(17);
+	var row = __webpack_require__(14);
 
 	module.exports = function (config) {
 		return row(config);
@@ -142,8 +142,8 @@
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var html = __webpack_require__(14);
-	var styles = __webpack_require__(15);
+	var html = __webpack_require__(16);
+	var styles = __webpack_require__(17);
 
 	module.exports = function () {
 	  return html;
@@ -154,49 +154,13 @@
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<i class=\"fa fa-question\" style=\"font-size: 181px\"></i>\n";
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<img src=\"/oshw-logo-outline.svg\"/>\n";
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<i class=\"fa fa-calendar\" style=\"font-size: 181px\"></i>\n";
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<h4 id=\"the-action\">The Action</h4>\n<p>We design, co-design, and facilitate the manufacture and monetization of products which:</p>\n<ol>\n<li>Give their users new abilities (empowerment)</li>\n<li>Reduce the power of unearned influence</li>\n<li>Contribute to the global commons by open sourcing design</li>\n<li>Make the world a better, safer place.  </li>\n</ol>\n<p>We help open startups make it from vision to profitability through consultation, facilitation, and directly adding to their team through our pool of experts.  </p>\n<p>Additionally, our team of independent in-house experts teaches next-generation computing concepts and researches block-chains and e-commerce solutions.</p>\n";
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<h4 id=\"the-platform\">The Platform</h4>\n<ul>\n<li><p>A Hybrid Organization: Workspace + learning + manufacturing + global sales</p>\n</li>\n<li><p>An infrastructure platform for startups with high monetization potential and an understanding of next generation business models and technologies.</p>\n</li>\n<li>A tangible gathering space for open source community leaders and beginners alike to exchange their views.</li>\n<li>A knowledge-sharing community aimed at helping people from all backgrounds do the work they are passionate about together.</li>\n</ul>\n";
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<h4 id=\"the-strategy\">The Strategy</h4>\n<ol>\n<li>Build a multidisciplinary team and provide them with all of the resources needed to rapidly prototype and manufacture hardware, software, webware, and service-based solutions for the emergent &quot;internet of things,&quot; as well as traditional computing devices.</li>\n<li>Develop and <strong>commercialize</strong> open hardware products that span every price bracket using modular components.</li>\n<li>Develop open software with clear applications in today&#39;s world.</li>\n<li>Run a firmware repository containing firmware for both open and opened technology platforms.</li>\n<li>Leverage our 100% transparent, open business model to enhance our competitive advantage in: recruiting, customers&#39; and suppliers understanding of our strategies, and public awareness of our solutions</li>\n<li>In order to have an excellent product pipeline and top talent, support open technology projects of every type.</li>\n<li>Intentionally integrate our projects and corporate ownership as appropriate, while seeking further integration opportunities.</li>\n</ol>\n";
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(13);
+	var content = __webpack_require__(7);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(22)(content, {});
+	var update = __webpack_require__(15)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
@@ -210,50 +174,50 @@
 	}
 
 /***/ },
-/* 13 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(23)();
 	exports.push([module.id, "\nbody {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n\n\tfont-family: \"Lato\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n\tfont-size: 15px;\n\tline-height: 1.42857143;\n\tcolor: #2c3e50;\n\tbackground-color: #ffffff;\n}\n\n.contact-us {\n  background: #333;\n}\n\n.contact-us h2 {\n  color:#DDD;\n}\n.contact-col {\n  padding: 5px 80px;\n}\n\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\n.h1,\n.h2,\n.h3,\n.h4,\n.h5,\n.h6 {\n  font-family: \"Lato\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 400;\n  line-height: 1.1;\n  color: inherit;\n}\nh1 small,\nh2 small,\nh3 small,\nh4 small,\nh5 small,\nh6 small,\n.h1 small,\n.h2 small,\n.h3 small,\n.h4 small,\n.h5 small,\n.h6 small,\nh1 .small,\nh2 .small,\nh3 .small,\nh4 .small,\nh5 .small,\nh6 .small,\n.h1 .small,\n.h2 .small,\n.h3 .small,\n.h4 .small,\n.h5 .small,\n.h6 .small {\n  font-weight: normal;\n  line-height: 1;\n  color: #b4bcc2;\n}\nh1,\n.h1,\nh2,\n.h2,\nh3,\n.h3 {\n  margin-top: 21px;\n  margin-bottom: 10.5px;\n}\nh1 small,\n.h1 small,\nh2 small,\n.h2 small,\nh3 small,\n.h3 small,\nh1 .small,\n.h1 .small,\nh2 .small,\n.h2 .small,\nh3 .small,\n.h3 .small {\n  font-size: 65%;\n}\nh4,\n.h4,\nh5,\n.h5,\nh6,\n.h6 {\n  margin-top: 10.5px;\n  margin-bottom: 10.5px;\n}\nh4 small,\n.h4 small,\nh5 small,\n.h5 small,\nh6 small,\n.h6 small,\nh4 .small,\n.h4 .small,\nh5 .small,\n.h5 .small,\nh6 .small,\n.h6 .small {\n  font-size: 75%;\n}\nh1,\n.h1 {\n  font-size: 39px;\n}\nh2,\n.h2 {\n  font-size: 32px;\n}\nh3,\n.h3 {\n  font-size: 26px;\n}\nh4,\n.h4 {\n  font-size: 19px;\n}\nh5,\n.h5 {\n  font-size: 15px;\n}\nh6,\n.h6 {\n  font-size: 13px;\n}\np {\n  margin: 0 0 10.5px;\n}\n", ""]);
 
 /***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<i class=\"fa fa-bolt\" style=\"font-size: 181px\"></i>\n";
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<i class=\"fa fa-institution\" style=\"font-size: 181px\"></i>\n";
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<img src=\"/oshw-logo-outline.svg\"/>\n";
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<h4 id=\"the-action\">The Action</h4>\n<p>We design, co-design, and facilitate the manufacture and monetization of products which:</p>\n<ol>\n<li>Give their users new abilities (empowerment)</li>\n<li>Reduce the power of unearned influence</li>\n<li>Contribute to the global commons by open sourcing design</li>\n<li>Make the world a better, safer place.  </li>\n</ol>\n<p>We help open startups make it from vision to profitability through consultation, facilitation, and directly adding to their team through our pool of experts.  </p>\n<p>Additionally, our team of independent in-house experts teaches next-generation computing concepts and researches block-chains and e-commerce solutions.</p>\n";
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<h4 id=\"the-platform\">The Platform</h4>\n<ul>\n<li><p>A Hybrid Organization: Workspace + learning + manufacturing + global sales</p>\n</li>\n<li><p>An infrastructure platform for startups with high monetization potential and an understanding of next generation business models and technologies.</p>\n</li>\n<li>A tangible gathering space for open source community leaders and beginners alike to exchange their views.</li>\n<li>A knowledge-sharing community aimed at helping people from all backgrounds do the work they are passionate about together.</li>\n</ul>\n";
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<h4 id=\"the-strategy\">The Strategy</h4>\n<ol>\n<li>Build a multidisciplinary team and provide them with all of the resources needed to rapidly prototype and manufacture hardware, software, webware, and service-based solutions for the emergent &quot;internet of things,&quot; as well as traditional computing devices.</li>\n<li>Develop and <strong>commercialize</strong> open hardware products that span every price bracket using modular components.</li>\n<li>Develop open software with clear applications in today&#39;s world.</li>\n<li>Run a firmware repository containing firmware for both open and opened technology platforms.</li>\n<li>Leverage our 100% transparent, open business model to enhance our competitive advantage in: recruiting, customers&#39; and suppliers understanding of our strategies, and public awareness of our solutions</li>\n<li>In order to have an excellent product pipeline and top talent, support open technology projects of every type.</li>\n<li>Intentionally integrate our projects and corporate ownership as appropriate, while seeking further integration opportunities.</li>\n</ol>\n";
+
+/***/ },
 /* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<hr class=\"soften\">\n";
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(16);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(22)(content, {});
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css", function() {
-			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(23)();
-	exports.push([module.id, "hr.soften {\n  margin: 30px 10px;\n  height: 1px;\n  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  border: 0;\n}\n", ""]);
-
-/***/ },
-/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
@@ -289,100 +253,7 @@
 	}
 
 /***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = function anonymous(locals, filters, escape, rethrow) {
-	    escape = escape || function(html) {
-	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
-	    };
-	    var __stack = {
-	        lineno: 1,
-	        input: '<style>\n\n	svg {\n		shape-rendering: geometricPrecision;\n		z-index: -1;\n	  position: absolute;\n\n		top: 0;\n		right: 0;\n		left: 0;\n		bottom: 0;\n		margin-top: 0px;\n	}\n\n	line {\n		/*stroke: url(#gradient);*/\n		stroke: #e9e8e3;\n		stroke-width: 0.5;\n	}\n</style>\n\n<%\n	var total = 75;\n\n	var width = 1000;\n	var height = 1000;\n%>\n\n<svg viewBox="0 0 1000 1000">\n  <defs>\n    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">\n			<stop offset="0%" stop-color="#5151c1">\n      <stop offset="100%" stop-color="#333"/>\n    </linearGradient>\n			<g id="rays">\n\n				<% for (var i = 0; i < total; i++) {\n					dx = i * width / total;\n					dy = i * height / total; %>\n					<!-- corner to side -->\n					<line	x1="0" x2="<%= width %>" y1="<%= dy %>" y2="<%= dy %>" />\n					<line	x1="<%= dx %>" x2="<%= dx %>" y1="0" y2="<%= height %>" />\n				<% } %>\n\n				<% for (var i = 0; i < total; i++) {\n					dx = i * width / total;\n					dy = i * height / total; %>\n					<!-- corner to bottom -->\n				<% } %>\n\n\n			</g>\n  </defs>\n\n		<g>\n			<use xlink:href="#rays" transform="translate(40, -180) rotate(15) translate(350, 10) scale(1.5, 1.5)" />\n		</g>\n\n</svg>\n',
-	        filename: "."
-	    };
-	    function rethrow(err, str, filename, lineno) {
-	        var lines = str.split("\n"), start = Math.max(lineno - 3, 0), end = Math.min(lines.length, lineno + 3);
-	        var context = lines.slice(start, end).map(function(line, i) {
-	            var curr = i + start + 1;
-	            return (curr == lineno ? " >> " : "    ") + curr + "| " + line;
-	        }).join("\n");
-	        err.path = filename;
-	        err.message = (filename || "ejs") + ":" + lineno + "\n" + context + "\n\n" + err.message;
-	        throw err;
-	    }
-	    try {
-	        var buf = [];
-	        with (locals || {}) {
-	            (function() {
-	                buf.push("<style>\n\n	svg {\n		shape-rendering: geometricPrecision;\n		z-index: -1;\n	  position: absolute;\n\n		top: 0;\n		right: 0;\n		left: 0;\n		bottom: 0;\n		margin-top: 0px;\n	}\n\n	line {\n		/*stroke: url(#gradient);*/\n		stroke: #e9e8e3;\n		stroke-width: 0.5;\n	}\n</style>\n\n");
-	                __stack.lineno = 22;
-	                var total = 75;
-	                var width = 1e3;
-	                var height = 1e3;
-	                buf.push('\n\n<svg viewBox="0 0 1000 1000">\n  <defs>\n    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">\n			<stop offset="0%" stop-color="#5151c1">\n      <stop offset="100%" stop-color="#333"/>\n    </linearGradient>\n			<g id="rays">\n\n				');
-	                __stack.lineno = 37;
-	                for (var i = 0; i < total; i++) {
-	                    dx = i * width / total;
-	                    dy = i * height / total;
-	                    buf.push('\n					<!-- corner to side -->\n					<line	x1="0" x2="', escape((__stack.lineno = 41, width)), '" y1="', escape((__stack.lineno = 41, dy)), '" y2="', escape((__stack.lineno = 41, dy)), '" />\n					<line	x1="', escape((__stack.lineno = 42, dx)), '" x2="', escape((__stack.lineno = 42, dx)), '" y1="0" y2="', escape((__stack.lineno = 42, height)), '" />\n				');
-	                    __stack.lineno = 43;
-	                }
-	                buf.push("\n\n				");
-	                __stack.lineno = 45;
-	                for (var i = 0; i < total; i++) {
-	                    dx = i * width / total;
-	                    dy = i * height / total;
-	                    buf.push("\n					<!-- corner to bottom -->\n				");
-	                    __stack.lineno = 49;
-	                }
-	                buf.push('\n\n\n			</g>\n  </defs>\n\n		<g>\n			<use xlink:href="#rays" transform="translate(40, -180) rotate(15) translate(350, 10) scale(1.5, 1.5)" />\n		</g>\n\n</svg>\n');
-	            })();
-	        }
-	        return buf.join("");
-	    } catch (err) {
-	        rethrow(err, __stack.input, __stack.filename, __stack.lineno);
-	    }
-	}
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(20);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(22)(content, {});
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css", function() {
-			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(23)();
-	exports.push([module.id, ".page-nav {\n\tline-height: 120px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n\tcolor: #111;\n  font-size: 105%;\n}\n", ""]);
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"row between-xs page-nav\">\n\t\t<span class=\"title\">MetaDev Foundation</span>\n\n\t\t<div class=\"box\">\n\t\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t\t<a href=\"http://shop.metadevfoundation.org:3000\">Shop</a>\n\t\t</div>\n</div>\n";
-
-/***/ },
-/* 22 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -576,6 +447,135 @@
 		}
 	}
 
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<hr class=\"soften\">\n";
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(18);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(15)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css", function() {
+			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(23)();
+	exports.push([module.id, "hr.soften {\n  margin: 30px 10px;\n  height: 1px;\n  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  border: 0;\n}\n", ""]);
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function anonymous(locals, filters, escape, rethrow) {
+	    escape = escape || function(html) {
+	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+	    };
+	    var __stack = {
+	        lineno: 1,
+	        input: '<style>\n\n	svg {\n		shape-rendering: geometricPrecision;\n		z-index: -1;\n	  position: absolute;\n\n		top: 0;\n		right: 0;\n		left: 0;\n		bottom: 0;\n		margin-top: 0px;\n	}\n\n	line {\n		/*stroke: url(#gradient);*/\n		stroke: #e9e8e3;\n		stroke-width: 0.5;\n	}\n</style>\n\n<%\n	var total = 75;\n\n	var width = 1000;\n	var height = 1000;\n%>\n\n<svg viewBox="0 0 1000 1000">\n  <defs>\n    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">\n			<stop offset="0%" stop-color="#5151c1">\n      <stop offset="100%" stop-color="#333"/>\n    </linearGradient>\n			<g id="rays">\n\n				<% for (var i = 0; i < total; i++) {\n					dx = i * width / total;\n					dy = i * height / total; %>\n					<!-- corner to side -->\n					<line	x1="0" x2="<%= width %>" y1="<%= dy %>" y2="<%= dy %>" />\n					<line	x1="<%= dx %>" x2="<%= dx %>" y1="0" y2="<%= height %>" />\n				<% } %>\n\n				<% for (var i = 0; i < total; i++) {\n					dx = i * width / total;\n					dy = i * height / total; %>\n					<!-- corner to bottom -->\n				<% } %>\n\n\n			</g>\n  </defs>\n\n		<g>\n			<use xlink:href="#rays" transform="translate(40, -180) rotate(15) translate(350, 10) scale(1.5, 1.5)" />\n		</g>\n\n</svg>\n',
+	        filename: "."
+	    };
+	    function rethrow(err, str, filename, lineno) {
+	        var lines = str.split("\n"), start = Math.max(lineno - 3, 0), end = Math.min(lines.length, lineno + 3);
+	        var context = lines.slice(start, end).map(function(line, i) {
+	            var curr = i + start + 1;
+	            return (curr == lineno ? " >> " : "    ") + curr + "| " + line;
+	        }).join("\n");
+	        err.path = filename;
+	        err.message = (filename || "ejs") + ":" + lineno + "\n" + context + "\n\n" + err.message;
+	        throw err;
+	    }
+	    try {
+	        var buf = [];
+	        with (locals || {}) {
+	            (function() {
+	                buf.push("<style>\n\n	svg {\n		shape-rendering: geometricPrecision;\n		z-index: -1;\n	  position: absolute;\n\n		top: 0;\n		right: 0;\n		left: 0;\n		bottom: 0;\n		margin-top: 0px;\n	}\n\n	line {\n		/*stroke: url(#gradient);*/\n		stroke: #e9e8e3;\n		stroke-width: 0.5;\n	}\n</style>\n\n");
+	                __stack.lineno = 22;
+	                var total = 75;
+	                var width = 1e3;
+	                var height = 1e3;
+	                buf.push('\n\n<svg viewBox="0 0 1000 1000">\n  <defs>\n    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">\n			<stop offset="0%" stop-color="#5151c1">\n      <stop offset="100%" stop-color="#333"/>\n    </linearGradient>\n			<g id="rays">\n\n				');
+	                __stack.lineno = 37;
+	                for (var i = 0; i < total; i++) {
+	                    dx = i * width / total;
+	                    dy = i * height / total;
+	                    buf.push('\n					<!-- corner to side -->\n					<line	x1="0" x2="', escape((__stack.lineno = 41, width)), '" y1="', escape((__stack.lineno = 41, dy)), '" y2="', escape((__stack.lineno = 41, dy)), '" />\n					<line	x1="', escape((__stack.lineno = 42, dx)), '" x2="', escape((__stack.lineno = 42, dx)), '" y1="0" y2="', escape((__stack.lineno = 42, height)), '" />\n				');
+	                    __stack.lineno = 43;
+	                }
+	                buf.push("\n\n				");
+	                __stack.lineno = 45;
+	                for (var i = 0; i < total; i++) {
+	                    dx = i * width / total;
+	                    dy = i * height / total;
+	                    buf.push("\n					<!-- corner to bottom -->\n				");
+	                    __stack.lineno = 49;
+	                }
+	                buf.push('\n\n\n			</g>\n  </defs>\n\n		<g>\n			<use xlink:href="#rays" transform="translate(40, -180) rotate(15) translate(350, 10) scale(1.5, 1.5)" />\n		</g>\n\n</svg>\n');
+	            })();
+	        }
+	        return buf.join("");
+	    } catch (err) {
+	        rethrow(err, __stack.input, __stack.filename, __stack.lineno);
+	    }
+	}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(21);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(15)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css", function() {
+			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(23)();
+	exports.push([module.id, ".page-nav {\n\tline-height: 120px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n\tcolor: #111;\n  font-size: 105%;\n}\n", ""]);
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"row between-xs page-nav\">\n\t\t<span class=\"title\">MetaDev Foundation</span>\n\n\t\t<div class=\"box\">\n\t\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t\t<a href=\"http://shop.metadevfoundation.org:3000\">Shop</a>\n\t\t</div>\n</div>\n";
 
 /***/ },
 /* 23 */
