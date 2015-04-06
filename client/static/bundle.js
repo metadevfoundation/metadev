@@ -44,15 +44,52 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var page = __webpack_require__(1);
+	var config = __webpack_require__(1);
+
+	var ga = __webpack_require__(2)(config.analytics);
+
+	var page = __webpack_require__(3);
 
 	document.addEventListener("DOMContentLoaded", function () {
 		document.body.innerHTML = page({});
+		ga('send', 'pageview');
 	});
 
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
+	  analytics: 'UA-61322857-1'
+	};
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function (trackingCode) {
+	  (function (i, s, o, g, r, a, m) {
+	    i['GoogleAnalyticsObject'] = r;
+	    i[r] = i[r] || function () {
+	      (i[r].q = i[r].q || []).push(arguments)
+	    }, i[r].l = 1 * new Date();
+	    a = s.createElement(o),
+	      m = s.getElementsByTagName(o)[0];
+	    a.async = 1;
+	    a.src = g;
+	    m.parentNode.insertBefore(a, m)
+	  })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+	    'ga');
+
+	  ga('create', trackingCode, 'auto');
+	  return ga;
+	}
+
+
+/***/ },
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
@@ -61,7 +98,7 @@
 	    };
 	    var __stack = {
 	        lineno: 1,
-	        input: "<%\n\nvar styles = require('./index.css');\n\nvar header = require('./components/header');\nvar graphPaper = require('./components/graph-paper');\nvar infographic = require('./components/infographic');\nvar divider = require('./components/divider');\n\n\nvar rows = [{\n  graphic: require('./content/graphic-1.html'),\n  body: require('./content/body-1.md'),\n}, {\n  graphic: require('./content/graphic-2.html'),\n  body: require('./content/body-2.md'),\n}, {\n  graphic: require('./content/graphic-3.html'),\n  body: require('./content/body-3.md'),\n}];\n\n%>\n\n<%- graphPaper() %>\n<%- header() %>\n<style media=\"screen\">\n  .page {\n    background: white;\n    max-width: 1200px;\n    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);\n    margin: auto;\n    box-sizing: border-box;\n    padding: 2rem;\n  }\n  .page-title {\n    padding-left: 2rem;\n    font-size: 24px;\n    line-height: 24px;\n    height: 24px;\n  }\n</style>\n<div class=\"page\">\n  <div class=\"row middle-xs\">\n    <div class=\"col-xs-4\">\n      <h1 class=\"page-title\">Introduction</small></h1>\n    </div>\n  </div>\n  <%- divider() %>\n  <%- infographic(rows[0]) %>\n  <%- divider() %>\n  <%- infographic(rows[1]) %>\n  <%- divider() %>\n  <%- infographic(rows[2]) %>\n</div>\n",
+	        input: "<%\n\nvar styles = require('./index.css');\n\nvar header = require('./components/header');\nvar graphPaper = require('./components/graph-paper');\nvar infographic = require('./components/infographic');\nvar divider = require('./components/divider');\n\n\nvar rows = [{\n  graphic: require('./content/graphic-1.html'),\n  body: require('./content/body-1.md'),\n}, {\n  graphic: require('./content/graphic-2.html'),\n  body: require('./content/body-2.md'),\n}, {\n  graphic: require('./content/graphic-3.html'),\n  body: require('./content/body-3.md'),\n}];\n%>\n\n<%- graphPaper() %>\n<%- header() %>\n<style media=\"screen\">\n  .page {\n    background: white;\n    max-width: 1200px;\n    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);\n    margin: auto;\n    box-sizing: border-box;\n    padding: 2rem;\n  }\n  .page-title {\n    padding-left: 2rem;\n    font-size: 24px;\n    line-height: 24px;\n    height: 24px;\n  }\n</style>\n<div class=\"page\">\n  <div class=\"row middle-xs\">\n    <div class=\"col-xs-4\">\n      <h1 class=\"page-title\">Introduction</small></h1>\n    </div>\n  </div>\n  <%- divider() %>\n  <%- infographic(rows[0]) %>\n  <%- divider() %>\n  <%- infographic(rows[1]) %>\n  <%- divider() %>\n  <%- infographic(rows[2]) %>\n</div>\n",
 	        filename: "."
 	    };
 	    function rethrow(err, str, filename, lineno) {
@@ -80,11 +117,11 @@
 	            (function() {
 	                buf.push("");
 	                __stack.lineno = 1;
-	                var styles = __webpack_require__(6);
-	                var header = __webpack_require__(2);
-	                var graphPaper = __webpack_require__(3);
-	                var infographic = __webpack_require__(4);
-	                var divider = __webpack_require__(5);
+	                var styles = __webpack_require__(14);
+	                var header = __webpack_require__(4);
+	                var graphPaper = __webpack_require__(5);
+	                var infographic = __webpack_require__(6);
+	                var divider = __webpack_require__(7);
 	                var rows = [ {
 	                    graphic: __webpack_require__(8),
 	                    body: __webpack_require__(11)
@@ -95,7 +132,7 @@
 	                    graphic: __webpack_require__(10),
 	                    body: __webpack_require__(13)
 	                } ];
-	                buf.push("\n\n", (__stack.lineno = 24, graphPaper()), "\n", (__stack.lineno = 25, header()), '\n<style media="screen">\n  .page {\n    background: white;\n    max-width: 1200px;\n    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);\n    margin: auto;\n    box-sizing: border-box;\n    padding: 2rem;\n  }\n  .page-title {\n    padding-left: 2rem;\n    font-size: 24px;\n    line-height: 24px;\n    height: 24px;\n  }\n</style>\n<div class="page">\n  <div class="row middle-xs">\n    <div class="col-xs-4">\n      <h1 class="page-title">Introduction</small></h1>\n    </div>\n  </div>\n  ', (__stack.lineno = 48, divider()), "\n  ", (__stack.lineno = 49, infographic(rows[0])), "\n  ", (__stack.lineno = 50, divider()), "\n  ", (__stack.lineno = 51, infographic(rows[1])), "\n  ", (__stack.lineno = 52, divider()), "\n  ", (__stack.lineno = 53, infographic(rows[2])), "\n</div>\n");
+	                buf.push("\n\n", (__stack.lineno = 23, graphPaper()), "\n", (__stack.lineno = 24, header()), '\n<style media="screen">\n  .page {\n    background: white;\n    max-width: 1200px;\n    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);\n    margin: auto;\n    box-sizing: border-box;\n    padding: 2rem;\n  }\n  .page-title {\n    padding-left: 2rem;\n    font-size: 24px;\n    line-height: 24px;\n    height: 24px;\n  }\n</style>\n<div class="page">\n  <div class="row middle-xs">\n    <div class="col-xs-4">\n      <h1 class="page-title">Introduction</small></h1>\n    </div>\n  </div>\n  ', (__stack.lineno = 47, divider()), "\n  ", (__stack.lineno = 48, infographic(rows[0])), "\n  ", (__stack.lineno = 49, divider()), "\n  ", (__stack.lineno = 50, infographic(rows[1])), "\n  ", (__stack.lineno = 51, divider()), "\n  ", (__stack.lineno = 52, infographic(rows[2])), "\n</div>\n");
 	            })();
 	        }
 	        return buf.join("");
@@ -105,36 +142,14 @@
 	}
 
 /***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var styles = __webpack_require__(20);
-	var html = __webpack_require__(22);
-
-	module.exports = function () {
-	  return html;
-	};
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var graphPaper = __webpack_require__(19)();
-
-	module.exports = function () {
-	  return graphPaper;
-	}
-
-
-/***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var row = __webpack_require__(14);
+	var styles = __webpack_require__(17);
+	var html = __webpack_require__(19);
 
-	module.exports = function (config) {
-		return row(config);
+	module.exports = function () {
+	  return html;
 	};
 
 
@@ -142,11 +157,10 @@
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var html = __webpack_require__(16);
-	var styles = __webpack_require__(17);
+	var graphPaper = __webpack_require__(20)();
 
 	module.exports = function () {
-	  return html;
+	  return graphPaper;
 	}
 
 
@@ -154,31 +168,24 @@
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
+	var row = __webpack_require__(21);
 
-	// load the styles
-	var content = __webpack_require__(7);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/index.css", function() {
-			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/index.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	module.exports = function (config) {
+		return row(config);
+	};
+
 
 /***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(23)();
-	exports.push([module.id, "\nbody {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n\n\tfont-family: \"Lato\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n\tfont-size: 15px;\n\tline-height: 1.42857143;\n\tcolor: #2c3e50;\n\tbackground-color: #ffffff;\n}\n\n.contact-us {\n  background: #333;\n}\n\n.contact-us h2 {\n  color:#DDD;\n}\n.contact-col {\n  padding: 5px 80px;\n}\n\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\n.h1,\n.h2,\n.h3,\n.h4,\n.h5,\n.h6 {\n  font-family: \"Lato\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 400;\n  line-height: 1.1;\n  color: inherit;\n}\nh1 small,\nh2 small,\nh3 small,\nh4 small,\nh5 small,\nh6 small,\n.h1 small,\n.h2 small,\n.h3 small,\n.h4 small,\n.h5 small,\n.h6 small,\nh1 .small,\nh2 .small,\nh3 .small,\nh4 .small,\nh5 .small,\nh6 .small,\n.h1 .small,\n.h2 .small,\n.h3 .small,\n.h4 .small,\n.h5 .small,\n.h6 .small {\n  font-weight: normal;\n  line-height: 1;\n  color: #b4bcc2;\n}\nh1,\n.h1,\nh2,\n.h2,\nh3,\n.h3 {\n  margin-top: 21px;\n  margin-bottom: 10.5px;\n}\nh1 small,\n.h1 small,\nh2 small,\n.h2 small,\nh3 small,\n.h3 small,\nh1 .small,\n.h1 .small,\nh2 .small,\n.h2 .small,\nh3 .small,\n.h3 .small {\n  font-size: 65%;\n}\nh4,\n.h4,\nh5,\n.h5,\nh6,\n.h6 {\n  margin-top: 10.5px;\n  margin-bottom: 10.5px;\n}\nh4 small,\n.h4 small,\nh5 small,\n.h5 small,\nh6 small,\n.h6 small,\nh4 .small,\n.h4 .small,\nh5 .small,\n.h5 .small,\nh6 .small,\n.h6 .small {\n  font-size: 75%;\n}\nh1,\n.h1 {\n  font-size: 39px;\n}\nh2,\n.h2 {\n  font-size: 32px;\n}\nh3,\n.h3 {\n  font-size: 26px;\n}\nh4,\n.h4 {\n  font-size: 19px;\n}\nh5,\n.h5 {\n  font-size: 15px;\n}\nh6,\n.h6 {\n  font-size: 13px;\n}\np {\n  margin: 0 0 10.5px;\n}\n", ""]);
+	var html = __webpack_require__(22);
+	var styles = __webpack_require__(23);
+
+	module.exports = function () {
+	  return html;
+	}
+
 
 /***/ },
 /* 8 */
@@ -220,40 +227,34 @@
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = function anonymous(locals, filters, escape, rethrow) {
-	    escape = escape || function(html) {
-	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
-	    };
-	    var __stack = {
-	        lineno: 1,
-	        input: '<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		<%- graphic %>\n	</div>\n	<div class="col-xs-8">\n		<%- body %>\n	</div>\n</div>\n',
-	        filename: "."
-	    };
-	    function rethrow(err, str, filename, lineno) {
-	        var lines = str.split("\n"), start = Math.max(lineno - 3, 0), end = Math.min(lines.length, lineno + 3);
-	        var context = lines.slice(start, end).map(function(line, i) {
-	            var curr = i + start + 1;
-	            return (curr == lineno ? " >> " : "    ") + curr + "| " + line;
-	        }).join("\n");
-	        err.path = filename;
-	        err.message = (filename || "ejs") + ":" + lineno + "\n" + context + "\n\n" + err.message;
-	        throw err;
-	    }
-	    try {
-	        var buf = [];
-	        with (locals || {}) {
-	            (function() {
-	                buf.push('<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		', (__stack.lineno = 3, graphic), '\n	</div>\n	<div class="col-xs-8">\n		', (__stack.lineno = 6, body), "\n	</div>\n</div>\n");
-	            })();
-	        }
-	        return buf.join("");
-	    } catch (err) {
-	        rethrow(err, __stack.input, __stack.filename, __stack.lineno);
-	    }
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(15);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(16)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/index.css", function() {
+			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/index.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
 	}
 
 /***/ },
 /* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(25)();
+	exports.push([module.id, "\nbody {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n\n\tfont-family: \"Lato\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n\tfont-size: 15px;\n\tline-height: 1.42857143;\n\tcolor: #2c3e50;\n\tbackground-color: #ffffff;\n}\n\n.contact-us {\n  background: #333;\n}\n\n.contact-us h2 {\n  color:#DDD;\n}\n.contact-col {\n  padding: 5px 80px;\n}\n\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\n.h1,\n.h2,\n.h3,\n.h4,\n.h5,\n.h6 {\n  font-family: \"Lato\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 400;\n  line-height: 1.1;\n  color: inherit;\n}\nh1 small,\nh2 small,\nh3 small,\nh4 small,\nh5 small,\nh6 small,\n.h1 small,\n.h2 small,\n.h3 small,\n.h4 small,\n.h5 small,\n.h6 small,\nh1 .small,\nh2 .small,\nh3 .small,\nh4 .small,\nh5 .small,\nh6 .small,\n.h1 .small,\n.h2 .small,\n.h3 .small,\n.h4 .small,\n.h5 .small,\n.h6 .small {\n  font-weight: normal;\n  line-height: 1;\n  color: #b4bcc2;\n}\nh1,\n.h1,\nh2,\n.h2,\nh3,\n.h3 {\n  margin-top: 21px;\n  margin-bottom: 10.5px;\n}\nh1 small,\n.h1 small,\nh2 small,\n.h2 small,\nh3 small,\n.h3 small,\nh1 .small,\n.h1 .small,\nh2 .small,\n.h2 .small,\nh3 .small,\n.h3 .small {\n  font-size: 65%;\n}\nh4,\n.h4,\nh5,\n.h5,\nh6,\n.h6 {\n  margin-top: 10.5px;\n  margin-bottom: 10.5px;\n}\nh4 small,\n.h4 small,\nh5 small,\n.h5 small,\nh6 small,\n.h6 small,\nh4 .small,\n.h4 .small,\nh5 .small,\n.h5 .small,\nh6 .small,\n.h6 .small {\n  font-size: 75%;\n}\nh1,\n.h1 {\n  font-size: 39px;\n}\nh2,\n.h2 {\n  font-size: 32px;\n}\nh3,\n.h3 {\n  font-size: 26px;\n}\nh4,\n.h4 {\n  font-size: 19px;\n}\nh5,\n.h5 {\n  font-size: 15px;\n}\nh6,\n.h6 {\n  font-size: 13px;\n}\np {\n  margin: 0 0 10.5px;\n}\n", ""]);
+
+/***/ },
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -449,12 +450,6 @@
 
 
 /***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<hr class=\"soften\">\n";
-
-/***/ },
 /* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -464,12 +459,12 @@
 	var content = __webpack_require__(18);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(16)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css", function() {
-			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css");
+		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css", function() {
+			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -481,11 +476,17 @@
 /* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(23)();
-	exports.push([module.id, "hr.soften {\n  margin: 30px 10px;\n  height: 1px;\n  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  border: 0;\n}\n", ""]);
+	exports = module.exports = __webpack_require__(25)();
+	exports.push([module.id, ".page-nav {\n\tline-height: 120px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n\tcolor: #111;\n  font-size: 105%;\n}\n", ""]);
 
 /***/ },
 /* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"row between-xs page-nav\">\n\t\t<span class=\"title\">MetaDev Foundation</span>\n\n\t\t<div class=\"box\">\n\t\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t\t<a href=\"http://shop.metadevfoundation.org:3000\">Shop</a>\n\t\t</div>\n</div>\n";
+
+/***/ },
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
@@ -542,21 +543,63 @@
 	}
 
 /***/ },
-/* 20 */
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function anonymous(locals, filters, escape, rethrow) {
+	    escape = escape || function(html) {
+	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+	    };
+	    var __stack = {
+	        lineno: 1,
+	        input: '<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		<%- graphic %>\n	</div>\n	<div class="col-xs-8">\n		<%- body %>\n	</div>\n</div>\n',
+	        filename: "."
+	    };
+	    function rethrow(err, str, filename, lineno) {
+	        var lines = str.split("\n"), start = Math.max(lineno - 3, 0), end = Math.min(lines.length, lineno + 3);
+	        var context = lines.slice(start, end).map(function(line, i) {
+	            var curr = i + start + 1;
+	            return (curr == lineno ? " >> " : "    ") + curr + "| " + line;
+	        }).join("\n");
+	        err.path = filename;
+	        err.message = (filename || "ejs") + ":" + lineno + "\n" + context + "\n\n" + err.message;
+	        throw err;
+	    }
+	    try {
+	        var buf = [];
+	        with (locals || {}) {
+	            (function() {
+	                buf.push('<div class="row middle-xs">\n	<div class="col-xs-4 center-xs">\n		', (__stack.lineno = 3, graphic), '\n	</div>\n	<div class="col-xs-8">\n		', (__stack.lineno = 6, body), "\n	</div>\n</div>\n");
+	            })();
+	        }
+	        return buf.join("");
+	    } catch (err) {
+	        rethrow(err, __stack.input, __stack.filename, __stack.lineno);
+	    }
+	}
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<hr class=\"soften\">\n";
+
+/***/ },
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(21);
+	var content = __webpack_require__(24);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(16)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css", function() {
-			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/header/header.css");
+		module.hot.accept("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css", function() {
+			var newContent = require("!!/home/dsont/Projects/metadev/client/node_modules/css-loader/index.js!/home/dsont/Projects/metadev/client/src/components/divider/divider.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -565,20 +608,14 @@
 	}
 
 /***/ },
-/* 21 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(23)();
-	exports.push([module.id, ".page-nav {\n\tline-height: 120px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n\tcolor: #111;\n  font-size: 105%;\n}\n", ""]);
+	exports = module.exports = __webpack_require__(25)();
+	exports.push([module.id, "hr.soften {\n  margin: 30px 10px;\n  height: 1px;\n  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  border: 0;\n}\n", ""]);
 
 /***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"row between-xs page-nav\">\n\t\t<span class=\"title\">MetaDev Foundation</span>\n\n\t\t<div class=\"box\">\n\t\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t\t<a href=\"http://shop.metadevfoundation.org:3000\">Shop</a>\n\t\t</div>\n</div>\n";
-
-/***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function() {
