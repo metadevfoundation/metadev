@@ -6,7 +6,7 @@ var header = require('./components/header');
 var graphPaper = require('./components/graph-paper');
 var infographic = require('./components/infographic');
 var divider = require('./components/divider');
-
+var team = require('./components/team');
 
 var rows = [{
   graphic: require('./content/graphic-1.html'),
@@ -34,4 +34,21 @@ var rows = [{
   <%- infographic(rows[1]) %>
   <%- divider() %>
   <%- infographic(rows[2]) %>
+  <%- divider() %>
+</div>
+
+<div class="page" style="margin-top: 30px">
+  <div class="row middle-xs">
+    <div class="col-xs-4">
+      <h1 class="page-title">The Team</small></h1>
+    </div>
+  </div>
+  <%- divider() %>
+  <div class="row middle-xs">
+    <div class="col-xs-6">
+      <%- require('./content/team.md') %>
+    </div>
+    <img class="col-xs-6" src="/team-all.jpg" alt="" />
+  </div>
+    <%- team() %>
 </div>
