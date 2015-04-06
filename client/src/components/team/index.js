@@ -6,9 +6,6 @@ var thumbnails = [{
 	caption: 'Dan',
 	url: '/team-dan.jpg'
 }, {
-	caption: 'Jake',
-	url: '/team-jake.png'
-}, {
 	caption: 'Hai Bac',
 	url: '/team-haibac.png'
 }, {
@@ -17,6 +14,9 @@ var thumbnails = [{
 }, {
 	caption: 'Dung',
 	url: '/team-minhha.png'
+}, {
+	caption: 'Jake',
+	url: '/team-jake.png'
 }, {
 	caption: 'Dung',
 	url: '/team-dung.png'
