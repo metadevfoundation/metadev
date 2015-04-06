@@ -46,13 +46,13 @@
 
 	var config = __webpack_require__(1);
 
-	var ga = __webpack_require__(2)(config.gaTrackingCode);
-	ga('send', 'pageview');
+	var ga = __webpack_require__(2)(config.analytics);
 
 	var page = __webpack_require__(3);
 
 	document.addEventListener("DOMContentLoaded", function () {
-	  document.body.innerHTML = page({});
+		document.body.innerHTML = page({});
+		ga('send', 'pageview');
 	});
 
 
@@ -117,20 +117,20 @@
 	            (function() {
 	                buf.push("");
 	                __stack.lineno = 1;
-	                var styles = __webpack_require__(8);
+	                var styles = __webpack_require__(14);
 	                var header = __webpack_require__(4);
 	                var graphPaper = __webpack_require__(5);
 	                var infographic = __webpack_require__(6);
 	                var divider = __webpack_require__(7);
 	                var rows = [ {
+	                    graphic: __webpack_require__(8),
+	                    body: __webpack_require__(11)
+	                }, {
+	                    graphic: __webpack_require__(9),
+	                    body: __webpack_require__(12)
+	                }, {
 	                    graphic: __webpack_require__(10),
 	                    body: __webpack_require__(13)
-	                }, {
-	                    graphic: __webpack_require__(11),
-	                    body: __webpack_require__(14)
-	                }, {
-	                    graphic: __webpack_require__(12),
-	                    body: __webpack_require__(15)
 	                } ];
 	                buf.push("\n\n", (__stack.lineno = 23, graphPaper()), "\n", (__stack.lineno = 24, header()), '\n<style media="screen">\n  .page {\n    background: white;\n    max-width: 1200px;\n    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.22);\n    margin: auto;\n    box-sizing: border-box;\n    padding: 2rem;\n  }\n  .page-title {\n    padding-left: 2rem;\n    font-size: 24px;\n    line-height: 24px;\n    height: 24px;\n  }\n</style>\n<div class="page">\n  <div class="row middle-xs">\n    <div class="col-xs-4">\n      <h1 class="page-title">Introduction</small></h1>\n    </div>\n  </div>\n  ', (__stack.lineno = 47, divider()), "\n  ", (__stack.lineno = 48, infographic(rows[0])), "\n  ", (__stack.lineno = 49, divider()), "\n  ", (__stack.lineno = 50, infographic(rows[1])), "\n  ", (__stack.lineno = 51, divider()), "\n  ", (__stack.lineno = 52, infographic(rows[2])), "\n</div>\n");
 	            })();
@@ -191,10 +191,46 @@
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = "<i class=\"fa fa-bolt\" style=\"font-size: 181px\"></i>\n";
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<i class=\"fa fa-institution\" style=\"font-size: 181px\"></i>\n";
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<img src=\"/oshw-logo-outline.svg\"/>\n";
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<h4 id=\"the-action\">The Action</h4>\n<p>We design, co-design, and facilitate the manufacture and monetization of products which:</p>\n<ol>\n<li>Give their users new abilities (empowerment)</li>\n<li>Reduce the power of unearned influence</li>\n<li>Contribute to the global commons by open sourcing design</li>\n<li>Make the world a better, safer place.  </li>\n</ol>\n<p>We help open startups make it from vision to profitability through consultation, facilitation, and directly adding to their team through our pool of experts.  </p>\n<p>Additionally, our team of independent in-house experts teaches next-generation computing concepts and researches block-chains and e-commerce solutions.</p>\n";
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<h4 id=\"the-platform\">The Platform</h4>\n<ul>\n<li><p>A Hybrid Organization: Workspace + learning + manufacturing + global sales</p>\n</li>\n<li><p>An infrastructure platform for startups with high monetization potential and an understanding of next generation business models and technologies.</p>\n</li>\n<li>A tangible gathering space for open source community leaders and beginners alike to exchange their views.</li>\n<li>A knowledge-sharing community aimed at helping people from all backgrounds do the work they are passionate about together.</li>\n</ul>\n";
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<h4 id=\"the-strategy\">The Strategy</h4>\n<ol>\n<li>Build a multidisciplinary team and provide them with all of the resources needed to rapidly prototype and manufacture hardware, software, webware, and service-based solutions for the emergent &quot;internet of things,&quot; as well as traditional computing devices.</li>\n<li>Develop and <strong>commercialize</strong> open hardware products that span every price bracket using modular components.</li>\n<li>Develop open software with clear applications in today&#39;s world.</li>\n<li>Run a firmware repository containing firmware for both open and opened technology platforms.</li>\n<li>Leverage our 100% transparent, open business model to enhance our competitive advantage in: recruiting, customers&#39; and suppliers understanding of our strategies, and public awareness of our solutions</li>\n<li>In order to have an excellent product pipeline and top talent, support open technology projects of every type.</li>\n<li>Intentionally integrate our projects and corporate ownership as appropriate, while seeking further integration opportunities.</li>\n</ol>\n";
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(9);
+	var content = __webpack_require__(15);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(16)(content, {});
@@ -211,47 +247,11 @@
 	}
 
 /***/ },
-/* 9 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(25)();
 	exports.push([module.id, "\nbody {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n\n\tfont-family: \"Lato\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n\tfont-size: 15px;\n\tline-height: 1.42857143;\n\tcolor: #2c3e50;\n\tbackground-color: #ffffff;\n}\n\n.contact-us {\n  background: #333;\n}\n\n.contact-us h2 {\n  color:#DDD;\n}\n.contact-col {\n  padding: 5px 80px;\n}\n\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\n.h1,\n.h2,\n.h3,\n.h4,\n.h5,\n.h6 {\n  font-family: \"Lato\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 400;\n  line-height: 1.1;\n  color: inherit;\n}\nh1 small,\nh2 small,\nh3 small,\nh4 small,\nh5 small,\nh6 small,\n.h1 small,\n.h2 small,\n.h3 small,\n.h4 small,\n.h5 small,\n.h6 small,\nh1 .small,\nh2 .small,\nh3 .small,\nh4 .small,\nh5 .small,\nh6 .small,\n.h1 .small,\n.h2 .small,\n.h3 .small,\n.h4 .small,\n.h5 .small,\n.h6 .small {\n  font-weight: normal;\n  line-height: 1;\n  color: #b4bcc2;\n}\nh1,\n.h1,\nh2,\n.h2,\nh3,\n.h3 {\n  margin-top: 21px;\n  margin-bottom: 10.5px;\n}\nh1 small,\n.h1 small,\nh2 small,\n.h2 small,\nh3 small,\n.h3 small,\nh1 .small,\n.h1 .small,\nh2 .small,\n.h2 .small,\nh3 .small,\n.h3 .small {\n  font-size: 65%;\n}\nh4,\n.h4,\nh5,\n.h5,\nh6,\n.h6 {\n  margin-top: 10.5px;\n  margin-bottom: 10.5px;\n}\nh4 small,\n.h4 small,\nh5 small,\n.h5 small,\nh6 small,\n.h6 small,\nh4 .small,\n.h4 .small,\nh5 .small,\n.h5 .small,\nh6 .small,\n.h6 .small {\n  font-size: 75%;\n}\nh1,\n.h1 {\n  font-size: 39px;\n}\nh2,\n.h2 {\n  font-size: 32px;\n}\nh3,\n.h3 {\n  font-size: 26px;\n}\nh4,\n.h4 {\n  font-size: 19px;\n}\nh5,\n.h5 {\n  font-size: 15px;\n}\nh6,\n.h6 {\n  font-size: 13px;\n}\np {\n  margin: 0 0 10.5px;\n}\n", ""]);
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<i class=\"fa fa-bolt\" style=\"font-size: 181px\"></i>\n";
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<i class=\"fa fa-institution\" style=\"font-size: 181px\"></i>\n";
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<img src=\"/oshw-logo-outline.svg\"/>\n";
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<h4 id=\"the-action\">The Action</h4>\n<p>We design, co-design, and facilitate the manufacture and monetization of products which:</p>\n<ol>\n<li>Give their users new abilities (empowerment)</li>\n<li>Reduce the power of unearned influence</li>\n<li>Contribute to the global commons by open sourcing design</li>\n<li>Make the world a better, safer place.  </li>\n</ol>\n<p>We help open startups make it from vision to profitability through consultation, facilitation, and directly adding to their team through our pool of experts.  </p>\n<p>Additionally, our team of independent in-house experts teaches next-generation computing concepts and researches block-chains and e-commerce solutions.</p>\n";
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<h4 id=\"the-platform\">The Platform</h4>\n<ul>\n<li><p>A Hybrid Organization: Workspace + learning + manufacturing + global sales</p>\n</li>\n<li><p>An infrastructure platform for startups with high monetization potential and an understanding of next generation business models and technologies.</p>\n</li>\n<li>A tangible gathering space for open source community leaders and beginners alike to exchange their views.</li>\n<li>A knowledge-sharing community aimed at helping people from all backgrounds do the work they are passionate about together.</li>\n</ul>\n";
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<h4 id=\"the-strategy\">The Strategy</h4>\n<ol>\n<li>Build a multidisciplinary team and provide them with all of the resources needed to rapidly prototype and manufacture hardware, software, webware, and service-based solutions for the emergent &quot;internet of things,&quot; as well as traditional computing devices.</li>\n<li>Develop and <strong>commercialize</strong> open hardware products that span every price bracket using modular components.</li>\n<li>Develop open software with clear applications in today&#39;s world.</li>\n<li>Run a firmware repository containing firmware for both open and opened technology platforms.</li>\n<li>Leverage our 100% transparent, open business model to enhance our competitive advantage in: recruiting, customers&#39; and suppliers understanding of our strategies, and public awareness of our solutions</li>\n<li>In order to have an excellent product pipeline and top talent, support open technology projects of every type.</li>\n<li>Intentionally integrate our projects and corporate ownership as appropriate, while seeking further integration opportunities.</li>\n</ol>\n";
 
 /***/ },
 /* 16 */
