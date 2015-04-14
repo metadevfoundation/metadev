@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var layout = __webpack_require__(4);
+	var layout = __webpack_require__(3);
 
 	window.metadevLayout = layout;
 
@@ -52,8 +52,7 @@
 /***/ },
 /* 1 */,
 /* 2 */,
-/* 3 */,
-/* 4 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
@@ -94,11 +93,12 @@
 	}
 
 /***/ },
+/* 4 */,
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var styles = __webpack_require__(20);
-	var html = __webpack_require__(22);
+	var styles = __webpack_require__(19);
+	var html = __webpack_require__(21);
 
 	module.exports = function () {
 	  return html;
@@ -109,7 +109,7 @@
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var graphPaper = __webpack_require__(23)();
+	var graphPaper = __webpack_require__(26)();
 
 	module.exports = function () {
 	  return graphPaper;
@@ -352,14 +352,13 @@
 
 
 /***/ },
-/* 19 */,
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(21);
+	var content = __webpack_require__(20);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(18)(content, {});
@@ -376,20 +375,24 @@
 	}
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(31)();
 	exports.push([module.id, ".page-nav {\n\tline-height: 60px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n  font-size: 105%;\n}\n", ""]);
 
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"row between-xs page-nav\">\n  <div>\n\t\t<span class=\"page-title\">MetaDev Foundation</span>\n  </div>\n\n\t<div class=\"box\">\n\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t<a href=\"http://shop.metadevfoundation.org:3000\">Shop</a>\n\t</div>\n</div>\n";
+	module.exports = "<div class=\"row between-xs page-nav\">\n  <div>\n\t\t<span class=\"page-title\">MetaDev Foundation</span>\n  </div>\n\n\t<div class=\"box\">\n\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t<a href=\"http://shop.metadevfoundation.org\">Shop</a>\n\t</div>\n</div>\n";
 
 /***/ },
-/* 23 */
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
@@ -446,9 +449,6 @@
 	}
 
 /***/ },
-/* 24 */,
-/* 25 */,
-/* 26 */,
 /* 27 */,
 /* 28 */,
 /* 29 */,

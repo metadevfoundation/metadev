@@ -48,7 +48,7 @@
 
 	var ga = __webpack_require__(2)(config.analytics);
 
-	var page = __webpack_require__(3);
+	var page = __webpack_require__(4);
 
 	document.addEventListener("DOMContentLoaded", function () {
 		document.body.innerHTML = page({});
@@ -89,7 +89,8 @@
 
 
 /***/ },
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
@@ -143,12 +144,11 @@
 	}
 
 /***/ },
-/* 4 */,
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var styles = __webpack_require__(20);
-	var html = __webpack_require__(22);
+	var styles = __webpack_require__(19);
+	var html = __webpack_require__(21);
 
 	module.exports = function () {
 	  return html;
@@ -159,7 +159,7 @@
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var graphPaper = __webpack_require__(23)();
+	var graphPaper = __webpack_require__(26)();
 
 	module.exports = function () {
 	  return graphPaper;
@@ -170,7 +170,7 @@
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var row = __webpack_require__(19);
+	var row = __webpack_require__(25);
 
 	module.exports = function (config) {
 		return row(config);
@@ -181,8 +181,8 @@
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var html = __webpack_require__(24);
-	var styles = __webpack_require__(25);
+	var html = __webpack_require__(22);
+	var styles = __webpack_require__(23);
 
 	module.exports = function () {
 	  return html;
@@ -495,6 +495,78 @@
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(20);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(18)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/home/dsont/dev/metadev/client/node_modules/css-loader/index.js!/home/dsont/dev/metadev/client/src/components/header/header.css", function() {
+			var newContent = require("!!/home/dsont/dev/metadev/client/node_modules/css-loader/index.js!/home/dsont/dev/metadev/client/src/components/header/header.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(31)();
+	exports.push([module.id, ".page-nav {\n\tline-height: 60px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n  font-size: 105%;\n}\n", ""]);
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div class=\"row between-xs page-nav\">\n  <div>\n\t\t<span class=\"page-title\">MetaDev Foundation</span>\n  </div>\n\n\t<div class=\"box\">\n\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t<a href=\"http://shop.metadevfoundation.org\">Shop</a>\n\t</div>\n</div>\n";
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<hr class=\"soften\">\n";
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(24);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(18)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!/home/dsont/dev/metadev/client/node_modules/css-loader/index.js!/home/dsont/dev/metadev/client/src/components/divider/divider.css", function() {
+			var newContent = require("!!/home/dsont/dev/metadev/client/node_modules/css-loader/index.js!/home/dsont/dev/metadev/client/src/components/divider/divider.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(31)();
+	exports.push([module.id, "hr.soften {\n  margin: 30px 10px;\n  height: 1px;\n  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  border: 0;\n}\n", ""]);
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
 	    escape = escape || function(html) {
 	        return String(html).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;");
@@ -528,43 +600,7 @@
 	}
 
 /***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(21);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/dsont/dev/metadev/client/node_modules/css-loader/index.js!/home/dsont/dev/metadev/client/src/components/header/header.css", function() {
-			var newContent = require("!!/home/dsont/dev/metadev/client/node_modules/css-loader/index.js!/home/dsont/dev/metadev/client/src/components/header/header.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(31)();
-	exports.push([module.id, ".page-nav {\n\tline-height: 60px;\n  padding: 0 60px;\n\tmax-width: 1200px;\n\tmargin: auto;\n}\n\n.page-nav .title {\n\tpadding: 0 15px;\n  font-size: 120%;\n}\n\n.page-nav a {\n\tpadding: 0 15px;\n\ttext-decoration: none;\n  font-size: 105%;\n}\n", ""]);
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"row between-xs page-nav\">\n  <div>\n\t\t<span class=\"page-title\">MetaDev Foundation</span>\n  </div>\n\n\t<div class=\"box\">\n\t\t<a href=\"http://forum.metadevfoundation.org\">Forums</a>\n\t\t<a href=\"http://blog.metadevfoundation.org\">Blog</a>\n\t\t<a href=\"http://shop.metadevfoundation.org:3000\">Shop</a>\n\t</div>\n</div>\n";
-
-/***/ },
-/* 23 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function anonymous(locals, filters, escape, rethrow) {
@@ -619,42 +655,6 @@
 	        rethrow(err, __stack.input, __stack.filename, __stack.lineno);
 	    }
 	}
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<hr class=\"soften\">\n";
-
-/***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(26);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(18)(content, {});
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/dsont/dev/metadev/client/node_modules/css-loader/index.js!/home/dsont/dev/metadev/client/src/components/divider/divider.css", function() {
-			var newContent = require("!!/home/dsont/dev/metadev/client/node_modules/css-loader/index.js!/home/dsont/dev/metadev/client/src/components/divider/divider.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(31)();
-	exports.push([module.id, "hr.soften {\n  margin: 30px 10px;\n  height: 1px;\n  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0));\n  border: 0;\n}\n", ""]);
 
 /***/ },
 /* 27 */
