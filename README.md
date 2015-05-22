@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/metadevfoundation/metadev.png?label=ready&title=Ready)](https://waffle.io/metadevfoundation/metadev)
 # MetaDev
 
 [MetaDev](http://metadevfoundation.org) web-app slash homepage.
