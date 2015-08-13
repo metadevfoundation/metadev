@@ -1,22 +1,27 @@
 {
-  "name": "metadev",
+  "name": "metadev-client",
   "version": "1.0.0",
-  "description": "",
-  "author": "Daniel Sont <dan.sont@gmail.com>",
-  "license": "MIT",
+  "description": "Client of MetaDev",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
-    "co-body": "^1.1.0",
-    "commander": "^2.7.1",
-    "gith": "^1.0.4",
-    "koa": "^0.18.1",
-    "koa-logger": "^1.2.2",
-    "koa-mount": "^1.3.0",
-    "koa-route": "^2.4.0",
-    "koa-static": "^1.4.9",
-    "winston": "^0.9.0"
+    "css-loader": "^0.9.1",
+    "ejs-compiled-loader": "^0.2.0",
+    "html-loader": "^0.2.3",
+    "markdown-loader": "^0.1.2",
+    "style-loader": "^0.9.0"
   },
   "devDependencies": {
-    "mocha": "^2.2.1",
-    "supertest": "^0.15.0"
+    "gulp": "^3.8.11",
+    "gulp-gh-pages": "^0.5.0",
+    "gulp-util": "^3.0.4",
+    "gulp-webpack": "^1.3.1",
+    "webpack": "^1.7.3",
+    "webpack-dev-server": "^1.8.0"
   }
 }
